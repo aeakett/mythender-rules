@@ -154,7 +154,13 @@ a:hover {
    border: black solid .25em;
 }
 
-dl {background-color: pink;}
+.gr dt {
+   font-weight: bold;
+}
+
+.gr dd {
+   margin-left: 1em;
+}
 
 .giftQual {
    color: #58585a;
