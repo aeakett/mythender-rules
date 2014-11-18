@@ -149,7 +149,10 @@ a:hover {
    font-size: 125%;
 }
 
-.boxed {background-color: green;}
+.boxed {
+   padding: .5em;
+   border: black solid .25em;
+}
 
 dl {background-color: pink;}
 
