@@ -1,17 +1,8 @@
--position images
--make inter-document links
--come up with css magic (or other) to address the stroke weight difference in small-cap text
+
 -investigate fonts
    -screen optimized serif?
    -go sans serif instead?
    -whatever it is, make sure that all of the fancy characters show
--think about how to display the umlaut on Jötun and Jörmungandr
 -should all fancy characters be replaced with html entities?
 -go through css and make sure that everything is styled properly
--style hearts, pasts, and fates text under titles
--any images replacable with svg?
--make favicon with red background
--make touch icons with smaller "M" (looks very tight with rounded corners)
--there are a couple of images that need to be cropped (somewhere in hearts/pasts/fates ?)
--there is a blight card image somewhere that has lost its border (prob autocropped too often)
 -holy crap... this looks horrible in IE (8 alt least)
