@@ -1,4 +1,3 @@
--scale images
 -position images
 -make inter-document links
 -come up with css magic (or other) to address the stroke weight difference in small-cap text
@@ -15,3 +14,4 @@
 -make touch icons with smaller "M" (looks very tight with rounded corners)
 -there are a couple of images that need to be cropped (somewhere in hearts/pasts/fates ?)
 -there is a blight card image somewhere that has lost its border (prob autocropped too often)
+-holy crap... this looks horrible in IE (8 alt least)
