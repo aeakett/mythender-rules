@@ -231,4 +231,14 @@ span.rap {
 }
 
 /* pod to select which gifts to display */
-.giftsSelector {position:fixed;background:#fff4c8;border:1px solid #ffcc00;width:180px;z-index:100;font-size: 75%; font-family: sans-serif;}
+.giftsSelector {
+    position:fixed;
+    top: 10px;
+    left: 10px;
+    background:#fff4c8;
+    border:1px solid #ffcc00;
+    width:180px;
+    z-index:100;
+    font-size: 75%;
+    font-family: sans-serif;
+}
