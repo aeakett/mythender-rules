@@ -267,3 +267,16 @@ ul.toc > li > ul > li {
     color: black;
     font-weight: normal;
 }
+
+h1.titleAuthor {
+    text-align: center;
+    font-size: 1.12em;
+    color: black;
+    margin-bottom: 0;
+}
+h1.title {
+    font-variant: small-caps;
+    text-align: center;
+    font-size: 4em;
+    margin-top: -.2em;
+}
