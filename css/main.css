@@ -290,4 +290,8 @@ span.initCap {
     font-size: 2.3em;
     float: left;
     font-family: windlass;
+   font-style: normal;
+}
+.fiction {
+   font-style: italic;
 }
