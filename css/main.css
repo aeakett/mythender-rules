@@ -242,3 +242,66 @@ span.rap {
     font-size: 75%;
     font-family: sans-serif;
 }
+
+ul.toc {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+ul.toc ul {
+    list-style-type: none;
+    margin-left: 1em;
+    padding-left: 0;
+}
+
+ul.toc > li {
+    font-size: 110%;
+    color: #91180e;
+    padding-top: 0.5em;
+    font-weight: bold;
+}
+
+ul.toc > li > ul > li {
+    font-size: 91%; /* 1/110% */
+    color: black;
+    font-weight: normal;
+}
+
+h1.titleAuthor {
+    text-align: center;
+    font-size: 1.12em;
+    color: black;
+    margin-bottom: 0;
+}
+h1.title {
+    font-variant: small-caps;
+    text-align: center;
+    font-size: 4em;
+    margin-top: -.2em;
+}
+.subtitle {
+    text-align: center;
+    font-size: 2em;
+    color: #91180e;
+    font-family: windlass;
+}
+span.initCap {
+    font-size: 2.3em;
+    float: left;
+    font-family: windlass;
+   font-style: normal;
+}
+.fiction {
+   font-style: italic;
+}
+.attribution {
+    text-align: right;
+}
+.creditsIndent {
+    padding-left: 1em;
+    text-indent: -1em;
+}
+a.noBold {
+    font-weight: normal;
+}
