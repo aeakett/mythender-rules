@@ -212,6 +212,9 @@ body {
    /* other stuff */
    font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
    /*background-image: url("../img/dice-bg.png");*/
+
+   margin-left: 0;
+   margin-right: 0;
 }
 
 .ramm {
