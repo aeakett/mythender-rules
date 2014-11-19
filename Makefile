@@ -1,10 +1,10 @@
 TEMPLATE=template.html
 
-OUTDIR=output
+OUTDIR=dist
 INPUT=$(filter-out $(TEMPLATE),$(wildcard *.html *.htm))
 OUTPUT=$(patsubst %,$(OUTDIR)/%,$(INPUT))
 
-COPYSRC=$(wildcard *.png) css js img
+COPYSRC=$(wildcard *.png) css js img favicon.ico
 COPYDST=$(patsubst %,$(OUTDIR)/%,$(COPYSRC))
 
 all: $(OUTDIR) $(OUTPUT) $(COPYDST)
@@ -19,5 +19,5 @@ $(OUTDIR)/%.htm: %.htm $(TEMPLATE)
 	./simple-templater $(TEMPLATE) $< $@
  
 $(OUTDIR)/%: %
-	rm -r $@
+	rm -fr $@
 	cp -r $< $@
