@@ -184,7 +184,7 @@ figcaption {
    margin-left: auto;
    margin-right: auto;
    padding: 2em;
-   width: 750px;
+   max-width: 750px;
 }
 
 .lic {
@@ -193,7 +193,7 @@ figcaption {
    margin-right: auto;
    padding: 2em;
    margin-top: 1em;
-   width: 750px;
+   max-width: 750px;
 }
 
 .lic p {font-size: 75%;}
