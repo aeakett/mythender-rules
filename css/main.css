@@ -295,3 +295,6 @@ span.initCap {
 .fiction {
    font-style: italic;
 }
+.attribution {
+    text-align: right;
+}
