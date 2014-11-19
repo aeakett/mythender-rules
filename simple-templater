@@ -1,0 +1,35 @@
+#! /bin/sh
+
+read_field() {
+	filename=$1
+	field=$2
+	grep -i "^%$field% " $filename | sed "s/^%$field% //"
+}
+
+template=$1
+filename=$2
+destination=$3
+
+if [ "$destination" = "" ]; then
+	cat <<END
+Usage: $0 <template-file> <input-file> <output-file>
+END
+	exit 1
+fi
+
+TITLE=`tempfile`
+read_field "$filename" TITLE > $TITLE
+
+EXTRAHEADER=`tempfile`
+read_field "$filename" EXTRAHEADER > $EXTRAHEADER
+
+BODY=`tempfile`
+grep -v '^%[^%]*% ' "$filename" > $BODY
+
+sed \
+	-e "/^%TITLE% *$/ {" -e "r $TITLE" -e 'd' -e '}'  \
+	-e "/^%EXTRAHEADER% *$/ {" -e "r $EXTRAHEADER" -e 'd' -e '}'  \
+	-e "/^%BODY% *$/ {" -e "r $BODY" -e 'd' -e '}'  \
+	$template > $destination
+
+rm $TITLE $EXTRAHEADER $BODY
