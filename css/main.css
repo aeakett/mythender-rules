@@ -242,3 +242,28 @@ span.rap {
     font-size: 75%;
     font-family: sans-serif;
 }
+
+ul.toc {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+ul.toc ul {
+    list-style-type: none;
+    margin-left: 1em;
+    padding-left: 0;
+}
+
+ul.toc > li {
+    font-size: 110%;
+    color: #91180e;
+    padding-top: 0.5em;
+    font-weight: bold;
+}
+
+ul.toc > li > ul > li {
+    font-size: 91%; /* 1/110% */
+    color: black;
+    font-weight: normal;
+}
