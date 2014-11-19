@@ -19,4 +19,5 @@ $(OUTDIR)/%.htm: %.htm $(TEMPLATE)
 	./simple-templater $(TEMPLATE) $< $@
  
 $(OUTDIR)/%: %
+	rm -r $@
 	cp -r $< $@
