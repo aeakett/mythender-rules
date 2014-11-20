@@ -1,0 +1,21 @@
+- Anchors
+	- Globally valid in case of a single page mode.
+	- Programmatically generate?
+
+- Link TOC
+
+- At top and bottom of each page, link to previous/next chapter (build into simple-templater)
+
+- Somewhere link to root on each page
+
+- Perhaps some sort of mini-TOC on every page?
+
+- Boxed sections: are boxes too wide?
+
+- HTML5 section/chapter markers?
+
+- If narrow browser, trim padding to 1em
+
+- Tell mobile browsers to just behave and not be clever.
+
+- Consider printing
