@@ -49,18 +49,6 @@
    font-style: normal;
 }
 
-@font-face {
-   font-family: 'amp';
-   src: url('amp.eot');
-   src: url('amp.eot?#iefix') format('embedded-opentype'),
-        url('amp.woff') format('woff'),
-        url('amp.ttf') format('truetype');
-   font-weight: normal;
-   font-style: normal;
-}
-
-span {text-decoration: blink;}
-
 .bigger {
    font-size: 130%;
 }
@@ -118,11 +106,8 @@ h3::first-letter {
 }
 
 .amp {
-   font-family: amp;
+   font-family: Georgia, serif;
    font-size: 115%;
-   vertical-align: baseline;
-   position: relative;
-   bottom: -.1em;
 }
 
 .Ouml {
