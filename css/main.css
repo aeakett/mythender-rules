@@ -40,6 +40,16 @@
 }
 
 @font-face {
+   font-family: 'Ouml-windlass';
+   src: url('Ouml-windlass.eot');
+   src: url('Ouml-windlass.eot?#iefix') format('embedded-opentype'),
+        url('Ouml-windlass.woff') format('woff'),
+        url('Ouml-windlass.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
    font-family: 'amp';
    src: url('amp.eot');
    src: url('amp.eot?#iefix') format('embedded-opentype'),
@@ -113,6 +123,10 @@ h3::first-letter {
    vertical-align: baseline;
    position: relative;
    bottom: -.1em;
+}
+
+.Ouml {
+   font-family: Ouml-windlass;
 }
 
 .mythender {
