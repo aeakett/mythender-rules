@@ -308,3 +308,8 @@ span.initCap {
 a.noBold {
     font-weight: normal;
 }
+
+.bib {
+   padding-left: 1em;
+   text-indent: -1em;
+}
