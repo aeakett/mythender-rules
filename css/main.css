@@ -251,81 +251,85 @@ span.rap {
 
 /* pod to select which gifts to display */
 .giftsSelector {
-    position:fixed;
-    top: 10px;
-    left: 10px;
-    background:#fff4c8;
-    border:1px solid #ffcc00;
-    width:180px;
-    z-index:100;
-    font-size: 75%;
-    font-family: sans-serif;
+   position:fixed;
+   top: 10px;
+   left: 10px;
+   background:#fff4c8;
+   border:1px solid #ffcc00;
+   width:180px;
+   z-index:100;
+   font-size: 75%;
+   font-family: sans-serif;
 }
 
 ul.toc {
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: 0;
+   list-style-type: none;
+   margin-left: 0;
+   padding-left: 0;
 }
 
 ul.toc ul {
-    list-style-type: none;
-    margin-left: 1em;
-    padding-left: 0;
+   list-style-type: none;
+   margin-left: 1em;
+   padding-left: 0;
 }
 
 ul.toc > li {
-    font-size: 110%;
-    color: #91180e;
-    padding-top: 0.5em;
-    font-weight: bold;
+   font-size: 110%;
+   color: #91180e;
+   padding-top: 0.5em;
+   font-weight: bold;
 }
 
 ul.toc > li > ul > li {
-    font-size: 91%; /* 1/110% */
-    color: black;
-    font-weight: normal;
+   font-size: 91%; /* 1/110% */
+   color: black;
+   font-weight: normal;
 }
 
 h1.titleAuthor {
-    text-align: center;
-    font-size: 1.12em;
-    color: black;
-    margin-bottom: 0;
+   text-align: center;
+   font-size: 1.12em;
+   color: black;
+   margin-bottom: 0;
 }
 h1.title {
-    font-variant: small-caps;
-    text-align: center;
-    font-size: 4em;
-    margin-top: -.2em;
+   font-variant: small-caps;
+   text-align: center;
+   font-size: 4em;
+   margin-top: -.2em;
 }
 .subtitle {
-    text-align: center;
-    font-size: 2em;
-    color: #91180e;
-    font-family: windlass;
+   text-align: center;
+   font-size: 2em;
+   color: #91180e;
+   font-family: windlass;
 }
 span.initCap {
-    font-size: 2.3em;
-    float: left;
-    font-family: windlass;
+   font-size: 2.3em;
+   float: left;
+   font-family: windlass;
    font-style: normal;
 }
 .fiction {
    font-style: italic;
 }
 .attribution {
-    text-align: right;
+   text-align: right;
 }
 .creditsIndent {
-    padding-left: 1em;
-    text-indent: -1em;
+   padding-left: 1em;
+   text-indent: -1em;
 }
 a.noBold {
-    font-weight: normal;
+   font-weight: normal;
 }
 
 .bib {
    padding-left: 1em;
    text-indent: -1em;
+}
+
+.heartPastFateDesc {
+   font-style: italic;
 }
