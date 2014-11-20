@@ -167,7 +167,7 @@ a:hover {
 
 .boxed {
    padding: .5em;
-   border: black solid .25em;
+   border: #000 solid .25em;
 }
 
 .gr dt {
@@ -226,7 +226,7 @@ body {
    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#91180e', endColorstr='#1e0a0a',GradientType=0 ); /* IE6-9 */
 
    /* other stuff */
-   font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+   font-family: Georgia, serif;
    /*background-image: url("../img/dice-bg.png");*/
 
    margin-left: 0;
@@ -255,7 +255,7 @@ span.rap {
    top: 10px;
    left: 10px;
    background:#fff4c8;
-   border:1px solid #ffcc00;
+   border:1px solid #fc0;
    width:180px;
    z-index:100;
    font-size: 75%;
@@ -283,14 +283,14 @@ ul.toc > li {
 
 ul.toc > li > ul > li {
    font-size: 91%; /* 1/110% */
-   color: black;
+   color: #000;
    font-weight: normal;
 }
 
 h1.titleAuthor {
    text-align: center;
    font-size: 1.12em;
-   color: black;
+   color: #000;
    margin-bottom: 0;
 }
 h1.title {
