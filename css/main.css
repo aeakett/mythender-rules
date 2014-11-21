@@ -135,6 +135,8 @@ a:hover {
    font-family: mythicdice;
    color: #91180e;
    font-size: 125%;
+   position: relative;
+   bottom: -.15em;
 }
 
 .boxed {
