@@ -1,8 +1,11 @@
-/* Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA */
-/* zurb.com */
-/* humanstxt.org */
+/* Humans who did this */
+Andrew Eakett (who did the initial heavy lifting)
+Alan De Smet (who came in and did some MAJOR clean-up)
 
-/* SITE */
-  Standards: HTML5, CSS3
-  Components: jQuery, Orbit, Reveal
-  Software: Coda, Textmate, Git
+/* Awesome Human Beings */
+Ryan Macklin (http://ryanmacklin.com/ & http://mythenderrpg.com/)
+Bully Pulpit Games (http://www.bullypulpitgames.com/)
+
+/* Technical Stuff */
+Foundation (http://foundation.zurb.com/)
+Code (https://github.com/aeakett/mythender-rules)
