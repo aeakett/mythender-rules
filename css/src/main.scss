@@ -1,0 +1,318 @@
+
+$red: #91180e;
+$dark-red: #1e0a0a;
+$grey: #58585a;
+$body-font: Georgia, serif;
+
+@font-face {
+   font-family: 'whitedice';
+   src: url('whitedice.eot');
+   src: url('whitedice.eot?#iefix') format('embedded-opentype'),
+        url('whitedice.woff') format('woff'),
+        url('whitedice.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'blackdice';
+   src: url('blackdice.eot');
+   src: url('blackdice.eot?#iefix') format('embedded-opentype'),
+        url('blackdice.woff') format('woff'),
+        url('blackdice.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'mythicdice';
+   src: url('mythicdice.eot');
+   src: url('mythicdice.eot?#iefix') format('embedded-opentype'),
+        url('mythicdice.woff') format('woff'),
+        url('mythicdice.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'windlass';
+   src: url('windlass.eot');
+   src: url('windlass.eot?#iefix') format('embedded-opentype'),
+        url('windlass.woff') format('woff'),
+        url('windlass.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Ouml-windlass';
+   src: url('Ouml-windlass.eot');
+   src: url('Ouml-windlass.eot?#iefix') format('embedded-opentype'),
+        url('Ouml-windlass.woff') format('woff'),
+        url('Ouml-windlass.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+.bigger {
+   font-size: 130%;
+}
+
+h1 {
+   color: $red;
+   font-size: 2em;
+}
+
+h2 {
+   font-size: 1.5em
+}
+
+h1, h2 {
+   font-family: windlass;
+   font-weight: normal;
+}
+
+h3 {
+   font-size: 1.17em;
+   font-variant: small-caps;
+}
+
+h4 {
+   font-size: 1em;
+}
+
+h3, h4 {
+   font-family: $body-font;
+   font-weight: bold;
+}
+
+/* fix extra space between {h2|h3|h4} and paragraph */
+h2, h3, h4 {
+   margin-bottom: 0;
+   margin-top: .66em;
+}
+h2 + p, h3 + p, h4 + p {
+   margin-top: .33em;
+}
+
+p {
+   margin-top: .5em;
+   margin-bottom: .5em;
+}
+
+h2 {
+   margin-top: 1em;
+}
+
+.gameKeyword {
+   color: $red;
+   font-variant: small-caps;
+   font-weight: bold;
+}
+
+.amp {
+   font-family: $body-font;
+   font-size: 115%;
+}
+
+.Ouml {
+   font-family: Ouml-windlass;
+   position: relative;
+   bottom: .05em;
+}
+
+.mythender {
+   font-variant: small-caps;
+   font-weight: bold;
+}
+
+a {
+   color: #000;
+   font-weight: bold;
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: underline;
+}
+
+.stormDie {
+   font-family: whitedice;
+}
+
+.thunderDie {
+   font-family: blackdice;
+}
+
+.bonusDie {
+   font-family: blackdice;
+   color: $red;
+}
+
+.mythicDie {
+   font-family: mythicdice;
+   color: $red;
+   font-size: 125%;
+   position: relative;
+   bottom: -.15em;
+}
+
+.boxed {
+   padding: .5em;
+   border: #000 solid .25em;
+}
+
+.gr dt {
+   font-weight: bold;
+}
+
+.gr dd {
+   margin-left: 1em;
+}
+
+.giftQual {
+   color: $grey;
+   font-variant: small-caps;
+   font-weight: bold;
+   margin-left: .5em;
+}
+
+.giftUpgrade {
+   margin-left: .5em;
+}
+
+figcaption {
+   font-style: italic;
+   color: $grey;
+   text-align: center;
+}
+
+.content {
+   background-color: #fff;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 2em;
+   max-width: 750px;
+   color: #000;
+}
+
+.lic {
+   background-color: #fff;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 2em;
+   margin-top: 1em;
+   max-width: 750px;
+}
+
+.lic p {font-size: 75%;}
+
+body {
+   background: $dark-red;
+   font-family: $body-font;
+   color: #000;
+
+   margin-left: 0;
+   margin-right: 0;
+}
+
+.ramm {
+   color: $red;
+   font-weight: bold;
+}
+
+/* there's a problem at #asdf... fix that up */
+.rap {
+   font-style: italic;
+   margin-left: 1em;
+}
+
+/* for some reason .rap is still adding the margin... hmm */
+span.rap {
+   font-style: italic;
+}
+
+/* pod to select which gifts to display */
+.giftsSelector {
+   position:fixed;
+   top: 10px;
+   left: 10px;
+   background:#fff4c8;
+   border:1px solid #fc0;
+   width:180px;
+   z-index:100;
+   font-size: 75%;
+   font-family: sans-serif;
+}
+
+ul.toc {
+   list-style-type: none;
+   margin-left: 0;
+   padding-left: 0;
+}
+
+ul.toc ul {
+   list-style-type: none;
+   margin-left: 1em;
+   padding-left: 0;
+}
+
+ul.toc > li {
+   font-size: 110%;
+   color: $red;
+   padding-top: 0.5em;
+   font-weight: bold;
+}
+
+ul.toc > li > ul > li {
+   font-size: 91%; /* 1/110% */
+   color: #000;
+   font-weight: normal;
+}
+
+h1.titleAuthor {
+   text-align: center;
+   font-size: 1.12em;
+   color: #000;
+   margin-bottom: 0;
+}
+h1.title {
+   font-variant: small-caps;
+   text-align: center;
+   font-size: 4em;
+   margin-top: -.2em;
+}
+.subtitle {
+   text-align: center;
+   font-size: 2em;
+   color: $red;
+   font-family: windlass;
+}
+span.initCap {
+   font-size: 2.3em;
+   float: left;
+   font-family: windlass;
+   font-style: normal;
+}
+.fiction {
+   font-style: italic;
+}
+.attribution {
+   text-align: right;
+}
+.creditsIndent {
+   padding-left: 1em;
+   text-indent: -1em;
+}
+a.noBold {
+   font-weight: normal;
+}
+
+.bib {
+   padding-left: 1em;
+   text-indent: -1em;
+}
+
+.heartPastFateDesc {
+   font-style: italic;
+}
