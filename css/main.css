@@ -363,7 +363,7 @@ a.noBold {
 }
 
 /* line 327, src/main.scss */
-h4.title {
+li.name h4 {
   font-family: windlass;
   font-weight: normal;
   color: #fff;
