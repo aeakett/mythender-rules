@@ -9142,29 +9142,29 @@ figcaption {
 /* line 190, src/main.scss */
 .content {
   background-color: #fff;
-  margin-left: auto;
+  /*margin-left: auto;
   margin-right: auto;
   padding: 2em;
-  max-width: 750px;
+  max-width: 750px; */
   color: #000;
 }
 
 /* line 199, src/main.scss */
 .lic {
   background-color: #fff;
-  margin-left: auto;
+  /*margin-left: auto;
   margin-right: auto;
   padding: 2em;
+  max-width: 750px;*/
   margin-top: 1em;
-  max-width: 750px;
 }
 
-/* line 208, src/main.scss */
+/* line 209, src/main.scss */
 .lic p {
   font-size: 75%;
 }
 
-/* line 210, src/main.scss */
+/* line 211, src/main.scss */
 body {
   background: #1e0a0a;
   font-family: Georgia, serif;
@@ -9173,27 +9173,27 @@ body {
   margin-right: 0;
 }
 
-/* line 219, src/main.scss */
+/* line 220, src/main.scss */
 .ramm {
   color: #91180e;
   font-weight: bold;
 }
 
 /* there's a problem at #asdf... fix that up */
-/* line 225, src/main.scss */
+/* line 226, src/main.scss */
 .rap {
   font-style: italic;
   margin-left: 1em;
 }
 
 /* for some reason .rap is still adding the margin... hmm */
-/* line 231, src/main.scss */
+/* line 232, src/main.scss */
 span.rap {
   font-style: italic;
 }
 
 /* pod to select which gifts to display */
-/* line 236, src/main.scss */
+/* line 237, src/main.scss */
 .giftsSelector {
   position: fixed;
   top: 10px;
@@ -9206,21 +9206,21 @@ span.rap {
   font-family: sans-serif;
 }
 
-/* line 248, src/main.scss */
+/* line 249, src/main.scss */
 ul.toc {
   list-style-type: none;
   margin-left: 0;
   padding-left: 0;
 }
 
-/* line 254, src/main.scss */
+/* line 255, src/main.scss */
 ul.toc ul {
   list-style-type: none;
   margin-left: 1em;
   padding-left: 0;
 }
 
-/* line 260, src/main.scss */
+/* line 261, src/main.scss */
 ul.toc > li {
   font-size: 110%;
   color: #91180e;
@@ -9228,7 +9228,7 @@ ul.toc > li {
   font-weight: bold;
 }
 
-/* line 267, src/main.scss */
+/* line 268, src/main.scss */
 ul.toc > li > ul > li {
   font-size: 91%;
   /* 1/110% */
@@ -9236,7 +9236,7 @@ ul.toc > li > ul > li {
   font-weight: normal;
 }
 
-/* line 273, src/main.scss */
+/* line 274, src/main.scss */
 h1.titleAuthor {
   text-align: center;
   font-size: 1.12em;
@@ -9244,7 +9244,7 @@ h1.titleAuthor {
   margin-bottom: 0;
 }
 
-/* line 279, src/main.scss */
+/* line 280, src/main.scss */
 h1.title {
   font-variant: small-caps;
   text-align: center;
@@ -9252,7 +9252,7 @@ h1.title {
   margin-top: -.2em;
 }
 
-/* line 285, src/main.scss */
+/* line 286, src/main.scss */
 .subtitle {
   text-align: center;
   font-size: 2em;
@@ -9260,7 +9260,7 @@ h1.title {
   font-family: windlass;
 }
 
-/* line 291, src/main.scss */
+/* line 292, src/main.scss */
 span.initCap {
   font-size: 2.3em;
   float: left;
@@ -9268,34 +9268,48 @@ span.initCap {
   font-style: normal;
 }
 
-/* line 297, src/main.scss */
+/* line 298, src/main.scss */
 .fiction {
   font-style: italic;
 }
 
-/* line 300, src/main.scss */
+/* line 301, src/main.scss */
 .attribution {
   text-align: right;
 }
 
-/* line 303, src/main.scss */
+/* line 304, src/main.scss */
 .creditsIndent {
   padding-left: 1em;
   text-indent: -1em;
 }
 
-/* line 307, src/main.scss */
+/* line 308, src/main.scss */
 a.noBold {
   font-weight: normal;
 }
 
-/* line 311, src/main.scss */
+/* line 312, src/main.scss */
 .bib {
   padding-left: 1em;
   text-indent: -1em;
 }
 
-/* line 316, src/main.scss */
+/* line 317, src/main.scss */
 .heartPastFateDesc {
   font-style: italic;
+}
+
+/* line 321, src/main.scss */
+.off-canvas-list a {
+  font-weight: normal;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+/* line 327, src/main.scss */
+h4.title {
+  font-family: windlass;
+  font-weight: normal;
+  color: #fff;
 }
