@@ -329,3 +329,24 @@ li.name h4 {
    font-weight: normal;
    color: #fff;
 }
+
+.panda:before {
+   @include css-triangle($topbar-dropdown-toggle-size, rgba($topbar-dropdown-toggle-color, $topbar-dropdown-toggle-alpha), right);
+   display: inline-block;
+   margin-right: .5em;
+}
+
+li.title.back.js-generated {
+   background: #222;
+}
+
+li.title.back.js-generated h5 a:before{
+   @include css-triangle($topbar-dropdown-toggle-size, rgba($topbar-dropdown-toggle-color, $topbar-dropdown-toggle-alpha), right);
+   display: inline-block;
+   margin-right: .5em;
+}
+
+.top-bar-section .dropdown li.parent-link a.parent-link {
+   //font-weight: bold;
+   font-size: 1rem;
+}

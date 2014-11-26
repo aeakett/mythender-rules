@@ -6471,8 +6471,8 @@ table tr td {
 }
 /* line 109, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 meta.foundation-mq-topbar {
-  font-family: "/only screen and (min-width:40.063em)/";
-  width: 40.063em;
+  font-family: "/only screen and (min-width: 9999px)/";
+  width: 9999px;
 }
 
 /* Wrapped around .top-bar to contain to grid width */
@@ -6957,7 +6957,7 @@ meta.foundation-mq-topbar {
   display: block;
 }
 
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 9999px) {
   /* line 447, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
   .top-bar {
     background: #333333;
@@ -8978,123 +8978,123 @@ th.hide-for-touch {
   font-weight: normal;
   font-style: normal;
 }
-/* line 57, src/main.scss */
+/* line 57, src/_main.scss */
 .bigger {
   font-size: 130%;
 }
 
-/* line 61, src/main.scss */
+/* line 61, src/_main.scss */
 h1 {
   color: #91180e;
   font-size: 2em;
 }
 
-/* line 66, src/main.scss */
+/* line 66, src/_main.scss */
 h2 {
   font-size: 1.5em;
 }
 
-/* line 70, src/main.scss */
+/* line 70, src/_main.scss */
 h1, h2 {
   font-family: windlass;
   font-weight: normal;
 }
 
-/* line 75, src/main.scss */
+/* line 75, src/_main.scss */
 h3 {
   font-size: 1.17em;
   font-variant: small-caps;
 }
 
-/* line 80, src/main.scss */
+/* line 80, src/_main.scss */
 h4 {
   font-size: 1em;
 }
 
-/* line 84, src/main.scss */
+/* line 84, src/_main.scss */
 h3, h4 {
   font-family: Georgia, serif;
   font-weight: bold;
 }
 
 /* fix extra space between {h2|h3|h4} and paragraph */
-/* line 90, src/main.scss */
+/* line 90, src/_main.scss */
 h2, h3, h4 {
   margin-bottom: 0;
   margin-top: .66em;
 }
 
-/* line 94, src/main.scss */
+/* line 94, src/_main.scss */
 h2 + p, h3 + p, h4 + p {
   margin-top: .33em;
 }
 
-/* line 98, src/main.scss */
+/* line 98, src/_main.scss */
 p {
   margin-top: .5em;
   margin-bottom: .5em;
 }
 
-/* line 103, src/main.scss */
+/* line 103, src/_main.scss */
 h2 {
   margin-top: 1em;
 }
 
-/* line 107, src/main.scss */
+/* line 107, src/_main.scss */
 .gameKeyword {
   color: #91180e;
   font-variant: small-caps;
   font-weight: bold;
 }
 
-/* line 113, src/main.scss */
+/* line 113, src/_main.scss */
 .amp {
   font-family: Georgia, serif;
   font-size: 115%;
 }
 
-/* line 118, src/main.scss */
+/* line 118, src/_main.scss */
 .Ouml {
   font-family: Ouml-windlass;
   position: relative;
   bottom: .05em;
 }
 
-/* line 124, src/main.scss */
+/* line 124, src/_main.scss */
 .mythender {
   font-variant: small-caps;
   font-weight: bold;
 }
 
-/* line 129, src/main.scss */
+/* line 129, src/_main.scss */
 a {
   color: #000;
   font-weight: bold;
   text-decoration: none;
 }
 
-/* line 135, src/main.scss */
+/* line 135, src/_main.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 139, src/main.scss */
+/* line 139, src/_main.scss */
 .stormDie {
   font-family: whitedice;
 }
 
-/* line 143, src/main.scss */
+/* line 143, src/_main.scss */
 .thunderDie {
   font-family: blackdice;
 }
 
-/* line 147, src/main.scss */
+/* line 147, src/_main.scss */
 .bonusDie {
   font-family: blackdice;
   color: #91180e;
 }
 
-/* line 152, src/main.scss */
+/* line 152, src/_main.scss */
 .mythicDie {
   font-family: mythicdice;
   color: #91180e;
@@ -9103,23 +9103,23 @@ a:hover {
   bottom: -.15em;
 }
 
-/* line 160, src/main.scss */
+/* line 160, src/_main.scss */
 .boxed {
   padding: .5em;
   border: #000 solid .25em;
 }
 
-/* line 165, src/main.scss */
+/* line 165, src/_main.scss */
 .gr dt {
   font-weight: bold;
 }
 
-/* line 169, src/main.scss */
+/* line 169, src/_main.scss */
 .gr dd {
   margin-left: 1em;
 }
 
-/* line 173, src/main.scss */
+/* line 173, src/_main.scss */
 .giftQual {
   color: #58585a;
   font-variant: small-caps;
@@ -9127,19 +9127,19 @@ a:hover {
   margin-left: .5em;
 }
 
-/* line 180, src/main.scss */
+/* line 180, src/_main.scss */
 .giftUpgrade {
   margin-left: .5em;
 }
 
-/* line 184, src/main.scss */
+/* line 184, src/_main.scss */
 figcaption {
   font-style: italic;
   color: #58585a;
   text-align: center;
 }
 
-/* line 190, src/main.scss */
+/* line 190, src/_main.scss */
 .content {
   background-color: #fff;
   /*margin-left: auto;
@@ -9149,7 +9149,7 @@ figcaption {
   color: #000;
 }
 
-/* line 199, src/main.scss */
+/* line 199, src/_main.scss */
 .lic {
   background-color: #fff;
   /*margin-left: auto;
@@ -9159,12 +9159,12 @@ figcaption {
   margin-top: 1em;
 }
 
-/* line 209, src/main.scss */
+/* line 209, src/_main.scss */
 .lic p {
   font-size: 75%;
 }
 
-/* line 211, src/main.scss */
+/* line 211, src/_main.scss */
 body {
   background: #1e0a0a;
   font-family: Georgia, serif;
@@ -9173,27 +9173,27 @@ body {
   margin-right: 0;
 }
 
-/* line 220, src/main.scss */
+/* line 220, src/_main.scss */
 .ramm {
   color: #91180e;
   font-weight: bold;
 }
 
 /* there's a problem at #asdf... fix that up */
-/* line 226, src/main.scss */
+/* line 226, src/_main.scss */
 .rap {
   font-style: italic;
   margin-left: 1em;
 }
 
 /* for some reason .rap is still adding the margin... hmm */
-/* line 232, src/main.scss */
+/* line 232, src/_main.scss */
 span.rap {
   font-style: italic;
 }
 
 /* pod to select which gifts to display */
-/* line 237, src/main.scss */
+/* line 237, src/_main.scss */
 .giftsSelector {
   position: fixed;
   top: 10px;
@@ -9206,21 +9206,21 @@ span.rap {
   font-family: sans-serif;
 }
 
-/* line 249, src/main.scss */
+/* line 249, src/_main.scss */
 ul.toc {
   list-style-type: none;
   margin-left: 0;
   padding-left: 0;
 }
 
-/* line 255, src/main.scss */
+/* line 255, src/_main.scss */
 ul.toc ul {
   list-style-type: none;
   margin-left: 1em;
   padding-left: 0;
 }
 
-/* line 261, src/main.scss */
+/* line 261, src/_main.scss */
 ul.toc > li {
   font-size: 110%;
   color: #91180e;
@@ -9228,7 +9228,7 @@ ul.toc > li {
   font-weight: bold;
 }
 
-/* line 268, src/main.scss */
+/* line 268, src/_main.scss */
 ul.toc > li > ul > li {
   font-size: 91%;
   /* 1/110% */
@@ -9236,7 +9236,7 @@ ul.toc > li > ul > li {
   font-weight: normal;
 }
 
-/* line 274, src/main.scss */
+/* line 274, src/_main.scss */
 h1.titleAuthor {
   text-align: center;
   font-size: 1.12em;
@@ -9244,7 +9244,7 @@ h1.titleAuthor {
   margin-bottom: 0;
 }
 
-/* line 280, src/main.scss */
+/* line 280, src/_main.scss */
 h1.title {
   font-variant: small-caps;
   text-align: center;
@@ -9252,7 +9252,7 @@ h1.title {
   margin-top: -.2em;
 }
 
-/* line 286, src/main.scss */
+/* line 286, src/_main.scss */
 .subtitle {
   text-align: center;
   font-size: 2em;
@@ -9260,7 +9260,7 @@ h1.title {
   font-family: windlass;
 }
 
-/* line 292, src/main.scss */
+/* line 292, src/_main.scss */
 span.initCap {
   font-size: 2.3em;
   float: left;
@@ -9268,48 +9268,84 @@ span.initCap {
   font-style: normal;
 }
 
-/* line 298, src/main.scss */
+/* line 298, src/_main.scss */
 .fiction {
   font-style: italic;
 }
 
-/* line 301, src/main.scss */
+/* line 301, src/_main.scss */
 .attribution {
   text-align: right;
 }
 
-/* line 304, src/main.scss */
+/* line 304, src/_main.scss */
 .creditsIndent {
   padding-left: 1em;
   text-indent: -1em;
 }
 
-/* line 308, src/main.scss */
+/* line 308, src/_main.scss */
 a.noBold {
   font-weight: normal;
 }
 
-/* line 312, src/main.scss */
+/* line 312, src/_main.scss */
 .bib {
   padding-left: 1em;
   text-indent: -1em;
 }
 
-/* line 317, src/main.scss */
+/* line 317, src/_main.scss */
 .heartPastFateDesc {
   font-style: italic;
 }
 
-/* line 321, src/main.scss */
+/* line 321, src/_main.scss */
 .off-canvas-list a {
   font-weight: normal;
   text-decoration: none;
   font-family: sans-serif;
 }
 
-/* line 327, src/main.scss */
+/* line 327, src/_main.scss */
 li.name h4 {
   font-family: windlass;
   font-weight: normal;
   color: #fff;
+}
+
+/* line 333, src/_main.scss */
+.panda:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 5px;
+  border-color: transparent rgba(255, 255, 255, 0.4) transparent transparent;
+  border-right-style: solid;
+  display: inline-block;
+  margin-right: .5em;
+}
+
+/* line 339, src/_main.scss */
+li.title.back.js-generated {
+  background: #222;
+}
+
+/* line 343, src/_main.scss */
+li.title.back.js-generated h5 a:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 5px;
+  border-color: transparent rgba(255, 255, 255, 0.4) transparent transparent;
+  border-right-style: solid;
+  display: inline-block;
+  margin-right: .5em;
+}
+
+/* line 349, src/_main.scss */
+.top-bar-section .dropdown li.parent-link a.parent-link {
+  font-size: 1rem;
 }
