@@ -1,0 +1,41 @@
+The <span class="gameKeyword">Corrupter</span> upgrade for <span class="gameKeyword">One More Breath</span> allows the god to corrupt all Mythenders upon being Ended by paying <span class="gameKeyword">5 Might tokens</span> each. For the one who Ended him, it only costs <span class="gameKeyword">2 Might tokens</span>.
+
+The <span class="gameKeyword">Bottomless</span> upgrade for <span class="gameKeyword">Bloodlust</span> allows you to, once per battle, gain the effects of the Gift (including <span class="gameKeyword">Dangerous</span>) at no cost.
+
+<div class="mythOnly">
+  <h3 id="mythmaker">Mythmaker</h3>
+   <p class="giftQual">Myths only, Non-Action</p>
+   <p>When you are Ended, the Mythenders’ <span class="gameKeyword">Apotheosis numbers</span> are considered one lower: 6 becomes 5, etc. 2 becomes automatic, and blank becomes 6.</p>
+</div>
+
+<div class="mythOnly">
+   <h3 id="scourgeoflight">Scourge of Light</h3>
+   <p class="giftQual">Myths only, Non-Action</p>
+   <p>When a Mythender is Wounded, if no Thunder dice are lost, 1 is lost instead.</p>
+</div>
+
+<div class="mythOnly">
+  <h3 id="eternalpower">Eternal Power</h3>
+   <p class="giftQual">Myths only</p>
+   <p>Gain additional Thunder dice at the beginning of each round after the first, at the cost of <span class="gameKeyword">2 Might</span> per Thunder die. This happens before any actions.</p>
+</div>
+
+<div class="mythOnly">
+  <h3 id="shieldoflessersgift">Shield of Lessers Gift</h3>
+   <p class="giftQual">Myths only</p>
+   <p>Pay <span class="gameKeyword">4 Might tokens</span> when you’re Wounded to have the Wound transfer to a Weapon. Instead of rolling for the Wound, destroy the Weapon. (Naturally, you can’t choose one already destroyed.) You cannot destroy your last Weapon.</p>
+</div>
+
+<div class="mythOnly">
+  <h3 id=""></h3>
+   <p class="giftQual">Myths only</p>
+   <p></p>
+</div>
+
+<div class="mythOnly">
+  <h3 id=""></h3>
+   <p class="giftQual">Myths only</p>
+   <p></p>
+</div>
+
+<p>This work is based on Mythender in Golarion (found at <a href="http://MythenderRPG.com">MythenderRPG.com</a>), created by John Comption and Ryan Macklin, and licensed for our use under the Creative Commons Attribution 3.0 Unported license (<a href="http://creativecommons.org/licenses/by/3.0/">creativecommons.org/licenses/by/3.0/</a>).</p>
