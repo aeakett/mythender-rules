@@ -1,4 +1,9 @@
 
+$red: #91180e;
+$dark-red: #1e0a0a;
+$grey: #58585a;
+$body-font: Georgia, serif;
+
 @font-face {
    font-family: 'whitedice';
    src: url('whitedice.eot');
@@ -54,18 +59,31 @@
 }
 
 h1 {
-   font-family: windlass;
-   color: #91180e;
-   font-weight: normal;
+   color: $red;
+   font-size: 2em;
 }
 
 h2 {
+   font-size: 1.5em
+}
+
+h1, h2 {
    font-family: windlass;
    font-weight: normal;
 }
 
 h3 {
+   font-size: 1.17em;
    font-variant: small-caps;
+}
+
+h4 {
+   font-size: 1em;
+}
+
+h3, h4 {
+   font-family: $body-font;
+   font-weight: bold;
 }
 
 /* fix extra space between {h2|h3|h4} and paragraph */
@@ -87,13 +105,13 @@ h2 {
 }
 
 .gameKeyword {
-   color: #91180e;
+   color: $red;
    font-variant: small-caps;
    font-weight: bold;
 }
 
 .amp {
-   font-family: Georgia, serif;
+   font-family: $body-font;
    font-size: 115%;
 }
 
@@ -128,12 +146,12 @@ a:hover {
 
 .bonusDie {
    font-family: blackdice;
-   color: #91180e;
+   color: $red;
 }
 
 .mythicDie {
    font-family: mythicdice;
-   color: #91180e;
+   color: $red;
    font-size: 125%;
    position: relative;
    bottom: -.15em;
@@ -153,7 +171,7 @@ a:hover {
 }
 
 .giftQual {
-   color: #58585a;
+   color: $grey;
    font-variant: small-caps;
    font-weight: bold;
    margin-left: .5em;
@@ -165,51 +183,42 @@ a:hover {
 
 figcaption {
    font-style: italic;
-   color: #58585a;
+   color: $grey;
    text-align: center;
 }
 
 .content {
    background-color: #fff;
-   margin-left: auto;
+   /*margin-left: auto;
    margin-right: auto;
    padding: 2em;
-   max-width: 750px;
+   max-width: 750px; */
    color: #000;
 }
 
 .lic {
    background-color: #fff;
-   margin-left: auto;
+   /*margin-left: auto;
    margin-right: auto;
    padding: 2em;
+   max-width: 750px;*/
    margin-top: 1em;
-   max-width: 750px;
+   
 }
 
 .lic p {font-size: 75%;}
 
 body {
-   /* gradient */
-   background: #91180e; /* Old browsers */
-   background: -moz-linear-gradient(top,  #91180e 1%, #3b1415 13%, #1e0a0a 26%); /* FF3.6+ */
-   background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#91180e), color-stop(13%,#3b1415), color-stop(26%,#1e0a0a)); /* Chrome,Safari4+ */
-   background: -webkit-linear-gradient(top,  #91180e 1%,#3b1415 13%,#1e0a0a 26%); /* Chrome10+,Safari5.1+ */
-   background: -o-linear-gradient(top,  #91180e 1%,#3b1415 13%,#1e0a0a 26%); /* Opera 11.10+ */
-   background: -ms-linear-gradient(top,  #91180e 1%,#3b1415 13%,#1e0a0a 26%); /* IE10+ */
-   background: linear-gradient(to bottom,  #91180e 1%,#3b1415 13%,#1e0a0a 26%); /* W3C */
-   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#91180e', endColorstr='#1e0a0a',GradientType=0 ); /* IE6-9 */
-
-   /* other stuff */
-   font-family: Georgia, serif;
-   /*background-image: url("../img/dice-bg.png");*/
+   background: $dark-red;
+   font-family: $body-font;
+   color: #000;
 
    margin-left: 0;
    margin-right: 0;
 }
 
 .ramm {
-   color: #91180e;
+   color: $red;
    font-weight: bold;
 }
 
@@ -251,7 +260,7 @@ ul.toc ul {
 
 ul.toc > li {
    font-size: 110%;
-   color: #91180e;
+   color: $red;
    padding-top: 0.5em;
    font-weight: bold;
 }
@@ -277,7 +286,7 @@ h1.title {
 .subtitle {
    text-align: center;
    font-size: 2em;
-   color: #91180e;
+   color: $red;
    font-family: windlass;
 }
 span.initCap {
@@ -307,4 +316,37 @@ a.noBold {
 
 .heartPastFateDesc {
    font-style: italic;
+}
+
+.off-canvas-list a {
+   font-weight: normal;
+   text-decoration: none;
+   font-family: sans-serif;
+}
+
+li.name h4 {
+   font-family: windlass;
+   font-weight: normal;
+   color: #fff;
+}
+
+.panda:before {
+   @include css-triangle($topbar-dropdown-toggle-size, rgba($topbar-dropdown-toggle-color, $topbar-dropdown-toggle-alpha), right);
+   display: inline-block;
+   margin-right: .5em;
+}
+
+li.title.back.js-generated {
+   background: #222;
+}
+
+li.title.back.js-generated h5 a:before{
+   @include css-triangle($topbar-dropdown-toggle-size, rgba($topbar-dropdown-toggle-color, $topbar-dropdown-toggle-alpha), right);
+   display: inline-block;
+   margin-right: .5em;
+}
+
+.top-bar-section .dropdown li.parent-link a.parent-link {
+   //font-weight: bold;
+   font-size: 1rem;
 }
