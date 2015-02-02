@@ -9349,3 +9349,8 @@ li.title.back.js-generated h5 a:before {
 .top-bar-section .dropdown li.parent-link a.parent-link {
   font-size: 1rem;
 }
+
+/* line 354, src/_main.scss */
+a:hover {
+  color: #91180e;
+}
