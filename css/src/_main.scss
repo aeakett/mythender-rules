@@ -233,16 +233,7 @@ span.rap {
    font-style: italic;
 }
 
-/* pod to select which gifts to display */
 .giftsSelector {
-   position:fixed;
-   top: 10px;
-   left: 10px;
-   background:#fff4c8;
-   border:1px solid #fc0;
-   width:180px;
-   z-index:100;
-   font-size: 75%;
    font-family: sans-serif;
 }
 
@@ -324,7 +315,7 @@ a.noBold {
    font-family: sans-serif;
 }
 
-li.name h4 {
+.tab-bar-section h4 {
    font-family: windlass;
    font-weight: normal;
    color: #fff;
