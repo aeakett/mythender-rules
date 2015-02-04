@@ -9299,7 +9299,7 @@ a.noBold {
 }
 
 /* line 318, src/_main.scss */
-.tab-bar-section h4 {
+.tab-bar-section h4 a {
   font-family: windlass;
   font-weight: normal;
   color: #fff;
