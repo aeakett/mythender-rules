@@ -9345,3 +9345,35 @@ li.title.back.js-generated h5 a:before {
 a:hover {
   color: #91180e;
 }
+
+/* line 349, src/_main.scss */
+.navList, .navList ul {
+  list-style-type: none;
+}
+
+/* line 350, src/_main.scss */
+.navList li a {
+  color: #ccc !important;
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+/* line 355, src/_main.scss */
+.navList .toggle {
+  float: right;
+  margin-right: 1em;
+}
+
+/* line 356, src/_main.scss */
+.navList .toggle + ul {
+  display: none;
+}
+
+/* line 358, src/_main.scss */
+.giftsSelector {
+  list-style-type: none;
+}
+/* line 360, src/_main.scss */
+.giftsSelector label {
+  color: #ccc;
+}
