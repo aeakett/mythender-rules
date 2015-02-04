@@ -9192,35 +9192,26 @@ span.rap {
   font-style: italic;
 }
 
-/* pod to select which gifts to display */
-/* line 237, src/_main.scss */
+/* line 236, src/_main.scss */
 .giftsSelector {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  background: #fff4c8;
-  border: 1px solid #fc0;
-  width: 180px;
-  z-index: 100;
-  font-size: 75%;
   font-family: sans-serif;
 }
 
-/* line 249, src/_main.scss */
+/* line 240, src/_main.scss */
 ul.toc {
   list-style-type: none;
   margin-left: 0;
   padding-left: 0;
 }
 
-/* line 255, src/_main.scss */
+/* line 246, src/_main.scss */
 ul.toc ul {
   list-style-type: none;
   margin-left: 1em;
   padding-left: 0;
 }
 
-/* line 261, src/_main.scss */
+/* line 252, src/_main.scss */
 ul.toc > li {
   font-size: 110%;
   color: #91180e;
@@ -9228,7 +9219,7 @@ ul.toc > li {
   font-weight: bold;
 }
 
-/* line 268, src/_main.scss */
+/* line 259, src/_main.scss */
 ul.toc > li > ul > li {
   font-size: 91%;
   /* 1/110% */
@@ -9236,7 +9227,7 @@ ul.toc > li > ul > li {
   font-weight: normal;
 }
 
-/* line 274, src/_main.scss */
+/* line 265, src/_main.scss */
 h1.titleAuthor {
   text-align: center;
   font-size: 1.12em;
@@ -9244,7 +9235,7 @@ h1.titleAuthor {
   margin-bottom: 0;
 }
 
-/* line 280, src/_main.scss */
+/* line 271, src/_main.scss */
 h1.title {
   font-variant: small-caps;
   text-align: center;
@@ -9252,7 +9243,7 @@ h1.title {
   margin-top: -.2em;
 }
 
-/* line 286, src/_main.scss */
+/* line 277, src/_main.scss */
 .subtitle {
   text-align: center;
   font-size: 2em;
@@ -9260,7 +9251,7 @@ h1.title {
   font-family: windlass;
 }
 
-/* line 292, src/_main.scss */
+/* line 283, src/_main.scss */
 span.initCap {
   font-size: 2.3em;
   float: left;
@@ -9268,53 +9259,53 @@ span.initCap {
   font-style: normal;
 }
 
-/* line 298, src/_main.scss */
+/* line 289, src/_main.scss */
 .fiction {
   font-style: italic;
 }
 
-/* line 301, src/_main.scss */
+/* line 292, src/_main.scss */
 .attribution {
   text-align: right;
 }
 
-/* line 304, src/_main.scss */
+/* line 295, src/_main.scss */
 .creditsIndent {
   padding-left: 1em;
   text-indent: -1em;
 }
 
-/* line 308, src/_main.scss */
+/* line 299, src/_main.scss */
 a.noBold {
   font-weight: normal;
 }
 
-/* line 312, src/_main.scss */
+/* line 303, src/_main.scss */
 .bib {
   padding-left: 1em;
   text-indent: -1em;
 }
 
-/* line 317, src/_main.scss */
+/* line 308, src/_main.scss */
 .heartPastFateDesc {
   font-style: italic;
 }
 
-/* line 321, src/_main.scss */
+/* line 312, src/_main.scss */
 .off-canvas-list a {
   font-weight: normal;
   text-decoration: none;
   font-family: sans-serif;
 }
 
-/* line 327, src/_main.scss */
-li.name h4 {
+/* line 318, src/_main.scss */
+.tab-bar-section h4 {
   font-family: windlass;
   font-weight: normal;
   color: #fff;
 }
 
-/* line 333, src/_main.scss */
+/* line 324, src/_main.scss */
 .panda:before {
   content: "";
   display: block;
@@ -9327,12 +9318,12 @@ li.name h4 {
   margin-right: .5em;
 }
 
-/* line 339, src/_main.scss */
+/* line 330, src/_main.scss */
 li.title.back.js-generated {
   background: #222;
 }
 
-/* line 343, src/_main.scss */
+/* line 334, src/_main.scss */
 li.title.back.js-generated h5 a:before {
   content: "";
   display: block;
@@ -9345,12 +9336,12 @@ li.title.back.js-generated h5 a:before {
   margin-right: .5em;
 }
 
-/* line 349, src/_main.scss */
+/* line 340, src/_main.scss */
 .top-bar-section .dropdown li.parent-link a.parent-link {
   font-size: 1rem;
 }
 
-/* line 354, src/_main.scss */
+/* line 345, src/_main.scss */
 a:hover {
   color: #91180e;
 }
