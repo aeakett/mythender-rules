@@ -9377,3 +9377,8 @@ a:hover {
 .giftsSelector label {
   color: #ccc;
 }
+
+/* line 363, src/_main.scss */
+figure {
+  text-align: center;
+}
