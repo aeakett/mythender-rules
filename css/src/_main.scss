@@ -367,3 +367,14 @@ a.toggle:hover {
 figure {
    text-align: center;
 }
+
+nav.noscriptNav {
+   background: #333;
+	color: #ccc;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: bold;
+	a {
+      color: #ccc;
+	}
+}
