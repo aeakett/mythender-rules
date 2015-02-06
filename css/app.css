@@ -9422,5 +9422,20 @@ nav.noscriptNav a {
 
 /* line 398, src/_main.scss */
 .giftSelected::before {
-  content: "X";
+  content: "";
+  background: url("../img/checked.svg");
+  display: inline-block;
+  height: 17px;
+  width: 20px;
+  background-size: 20px 20px;
+}
+
+/* line 406, src/_main.scss */
+.giftUnselected::before {
+  content: "";
+  background: url("../img/unchecked.svg");
+  display: inline-block;
+  height: 17px;
+  width: 20px;
+  background-size: 20px 20px;
 }
