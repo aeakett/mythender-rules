@@ -9347,7 +9347,7 @@ a:hover {
 }
 
 /* line 349, src/_main.scss */
-a.toggle:hover {
+.navList li a:hover {
   text-decoration: none;
 }
 
@@ -9375,20 +9375,39 @@ a.toggle:hover {
 }
 
 /* line 362, src/_main.scss */
+.navList li {
+  padding-top: 0.66667rem;
+  padding-bottom: 0.66667rem;
+  border-bottom: 1px solid #262626;
+  transition: background 300ms ease;
+  margin-left: -1.1rem;
+  padding-left: 1.1rem;
+}
+/* line 369, src/_main.scss */
+.navList li li:hover {
+  background: #333;
+}
+
+/* line 374, src/_main.scss */
+.navList li:hover {
+  background: #242424;
+}
+
+/* line 378, src/_main.scss */
 .giftsSelector {
   list-style-type: none;
 }
-/* line 364, src/_main.scss */
+/* line 380, src/_main.scss */
 .giftsSelector label {
   color: #ccc;
 }
 
-/* line 367, src/_main.scss */
+/* line 383, src/_main.scss */
 figure {
   text-align: center;
 }
 
-/* line 371, src/_main.scss */
+/* line 387, src/_main.scss */
 nav.noscriptNav {
   background: #333;
   color: #ccc;
@@ -9396,7 +9415,7 @@ nav.noscriptNav {
   font-family: sans-serif;
   font-weight: bold;
 }
-/* line 377, src/_main.scss */
+/* line 393, src/_main.scss */
 nav.noscriptNav a {
   color: #ccc;
 }
