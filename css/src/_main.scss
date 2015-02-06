@@ -346,6 +346,10 @@ a:hover {
    color: $red;
 }
 
+a.toggle:hover {
+   text-decoration: none;
+}
+
 .navList, .navList ul {list-style-type: none;}
 .navList li a {
    color: #ccc !important;
