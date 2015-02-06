@@ -9439,3 +9439,10 @@ nav.noscriptNav a {
   width: 20px;
   background-size: 20px 20px;
 }
+
+@media only screen and (max-width: 40em) {
+  /* line 416, src/_main.scss */
+  #theunofficialmythendersrd {
+    font-size: 80%;
+  }
+}

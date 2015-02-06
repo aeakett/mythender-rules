@@ -411,3 +411,9 @@ nav.noscriptNav {
 	width: 20px;
 	background-size: 20px 20px;
 }
+
+@media #{$small-only} {
+   #theunofficialmythendersrd {
+	   font-size: 80%;
+	}
+}
