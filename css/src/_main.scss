@@ -394,3 +394,7 @@ nav.noscriptNav {
       color: #ccc;
 	}
 }
+
+.giftSelected::before {
+   content: "X";
+}

@@ -9419,3 +9419,8 @@ nav.noscriptNav {
 nav.noscriptNav a {
   color: #ccc;
 }
+
+/* line 398, src/_main.scss */
+.giftSelected::before {
+  content: "X";
+}
