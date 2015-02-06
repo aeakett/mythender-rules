@@ -12,7 +12,7 @@ $(document).ready(function(){
    $('.navList .toggle').click(function(){
       $(this).next().slideToggle();
       if ($(this).text() == '+') {
-         $(this).text('-');
+         $(this).text('–');
       } else {
          $(this).text('+');
       }
