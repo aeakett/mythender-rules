@@ -52,4 +52,9 @@ sed \
 	-e "/^%BODY% *$/ {" -e "r $BODY" -e 'd' -e '}'  \
 	$template > $destination
 
+if [ "$filename" = "thanks_and_acknowledgements.htm" ]; then
+   sed -i 's/.*data-ta-remove="true".*//' $destination
+	sed -i 's/.*data-cc="true".*/<p>The text of this page is from the Mythender Roleplaying Game, written and published by Ryan Macklin, and used with permission.<\/p>/' $destination
+fi
+
 rm $TITLE $EXTRAHEADER $BODY
