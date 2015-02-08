@@ -400,23 +400,26 @@
    }
 
    function chargeCompanions() {
-      if (weapons[0].type.companion) {chargeWeapon(0);}
-      if (weapons[1].type.companion) {chargeWeapon(1);}
-      if (weapons[2].type.companion) {chargeWeapon(2);}
-      var n = noty({
-         text        : '<span class="gainLosePay">Companions Charged</span><img height="300" src="img/compCharge.svg">',
-         type        : 'alert',
-         maxVisible  : 1,
-         dismissQueue: true,
-         modal       : true,
-         layout      : 'center',
-         theme       : 'mythdice_theme',
-         animation: {
-            open: 'animated bounceInDown',
-            close: 'animated bounceOutDown'
-         }
-      });
-      saveWeapons()
+      var flag=false;
+      if (weapons[0].type.companion) {chargeWeapon(0); flag=true;}
+      if (weapons[1].type.companion) {chargeWeapon(1); flag=true;}
+      if (weapons[2].type.companion) {chargeWeapon(2); flag=true;}
+      if (flag) {
+         var n = noty({
+            text        : '<span class="gainLosePay">Companions Charged</span><img height="300" src="img/compCharge.svg">',
+            type        : 'alert',
+            maxVisible  : 1,
+            dismissQueue: true,
+            modal       : true,
+            layout      : 'center',
+            theme       : 'mythdice_theme',
+            animation: {
+               open: 'animated bounceInDown',
+               close: 'animated bounceOutDown'
+            }
+         });
+         saveWeapons();
+      }
    }
 
    function chargeWeapon(weaponNo) {
