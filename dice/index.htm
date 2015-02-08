@@ -399,16 +399,38 @@
       saveGifts();
    }
 
+   function chargeCompanions() {
+      if (weapons[0].type.companion) {chargeWeapon(0);}
+      if (weapons[1].type.companion) {chargeWeapon(1);}
+      if (weapons[2].type.companion) {chargeWeapon(2);}
+      var n = noty({
+         text        : '<span class="gainLosePay">Companions Charged</span><img height="300" src="img/compCharge.svg">',
+         type        : 'alert',
+         maxVisible  : 1,
+         dismissQueue: true,
+         modal       : true,
+         layout      : 'center',
+         theme       : 'mythdice_theme',
+         animation: {
+            open: 'animated bounceInDown',
+            close: 'animated bounceOutDown'
+         }
+      });
+      saveWeapons()
+   }
+
    function chargeWeapon(weaponNo) {
       if (!weapons[weaponNo].charge[0]) {weapons[weaponNo].charge[0]=true; return;}
       if (!weapons[weaponNo].charge[1]) {weapons[weaponNo].charge[1]=true; return;}
       if (!weapons[weaponNo].charge[2]) {weapons[weaponNo].charge[2]=true; return;}
+      saveWeapons();
    }
 
    function drainWeapon(weaponNo) {
       if (weapons[weaponNo].charge[0] && !weapons[weaponNo].drain[0]) {weapons[weaponNo].drain[0]=true;}
       if (weapons[weaponNo].charge[1] && !weapons[weaponNo].drain[1]) {weapons[weaponNo].drain[1]=true;}
       if (weapons[weaponNo].charge[2] && !weapons[weaponNo].drain[2]) {weapons[weaponNo].drain[2]=true;}
+      saveWeapons();
    }
 
    function renderGifts() {
@@ -539,6 +561,7 @@
          var newThunder = prevThunder - discarding;
          if (discarding > 0) {loseThunder(discarding);}
          saveThunder(newThunder);
+         chargeCompanions();
          $('#woundRollResults').empty();
          $('#woundRollResultsReset, #woundRoll').toggle();
          hideWRelentlessnessU(); hideWBloodlust(); hideWBloodlustQ(); hideWBloodlustD(); hideWBloodlustDQ();
