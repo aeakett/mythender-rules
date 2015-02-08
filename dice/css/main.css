@@ -34,3 +34,7 @@ a.accordianExplanation {float: right;}
    font-size: 300%;
    line-height: normal;
 }
+
+.intrinsic {background-color: #900;}
+.relic {background-color: #090;}
+.companion {background-color: #009;}

@@ -315,6 +315,11 @@
       renderGifts();
    }
 
+   function saveWeapons() {
+      simpleStorage.set('globalWeapons', weapons);
+      renderWeapons();
+   }
+
    function loadThunder() {
       var thunder=simpleStorage.get('globalThunder');
       if (thunder) {
@@ -361,6 +366,13 @@
       renderGifts();
    }
 
+   function loadWeapons() {
+      var thisWeapons=simpleStorage.get('globalWeapons');
+      if (!thisWeapons) { thisWeapons[0]=blankWeapon; thisWeapons[1]=blankWeapon; thisWeapons[2]=blankWeapon; }
+      weapons=thisWeapons;
+      renderWeapons();
+   }
+
    function getMight() {
       return $('#might').val();
    }
@@ -387,6 +399,18 @@
       saveGifts();
    }
 
+   function chargeWeapon(weaponNo) {
+      if (!weapons[weaponNo].charge[0]) {weapons[weaponNo].charge[0]=true; return;}
+      if (!weapons[weaponNo].charge[1]) {weapons[weaponNo].charge[1]=true; return;}
+      if (!weapons[weaponNo].charge[2]) {weapons[weaponNo].charge[2]=true; return;}
+   }
+
+   function drainWeapon(weaponNo) {
+      if (weapons[weaponNo].charge[0] && !weapons[weaponNo].drain[0]) {weapons[weaponNo].drain[0]=true;}
+      if (weapons[weaponNo].charge[1] && !weapons[weaponNo].drain[1]) {weapons[weaponNo].drain[1]=true;}
+      if (weapons[weaponNo].charge[2] && !weapons[weaponNo].drain[2]) {weapons[weaponNo].drain[2]=true;}
+   }
+
    function renderGifts() {
       $('#giftList').html('')
       for (var i in gifts) {
@@ -396,6 +420,40 @@
             }
          }
       }
+   }
+
+   function renderWeapons() {
+      $('#wpn1name').val(weapons[0].name).removeClass('intrinsic relic companion');
+      if (weapons[0].charge[0])      {$('#wpn1chg1').attr('checked');}
+      if (weapons[0].charge[1])      {$('#wpn1chg2').attr('checked');}
+      if (weapons[0].charge[2])      {$('#wpn1chg3').attr('checked');}
+      if (weapons[0].drain[0])       {$('#wpn1drn1').attr('checked');}
+      if (weapons[0].drain[1])       {$('#wpn1drn2').attr('checked');}
+      if (weapons[0].drain[2])       {$('#wpn1drn3').attr('checked');}
+      if (weapons[0].type.intrinsic) {$('#wpn1').addClass('intrinsic');}
+      if (weapons[0].type.relic)     {$('#wpn1').addClass('relic');}
+      if (weapons[0].type.intrinsic) {$('#wpn1').addClass('companion');}
+      $('#wpn2name').val(weapons[1].name).removeClass('intrinsic relic companion');
+      if (weapons[1].charge[0])      {$('#wpn2chg1').attr('checked');}
+      if (weapons[1].charge[1])      {$('#wpn2chg2').attr('checked');}
+      if (weapons[1].charge[2])      {$('#wpn2chg3').attr('checked');}
+      if (weapons[1].drain[0])       {$('#wpn2drn1').attr('checked');}
+      if (weapons[1].drain[1])       {$('#wpn2drn2').attr('checked');}
+      if (weapons[1].drain[2])       {$('#wpn2drn3').attr('checked');}
+      if (weapons[1].type.intrinsic) {$('#wpn2').addClass('intrinsic');}
+      if (weapons[1].type.relic)     {$('#wpn2').addClass('relic');}
+      if (weapons[1].type.intrinsic) {$('#wpn2').addClass('companion');}
+      $('#wpn3name').val(weapons[2].name).removeClass('intrinsic relic companion');
+      if (weapons[2].charge[0])      {$('#wpn3chg1').attr('checked');}
+      if (weapons[2].charge[1])      {$('#wpn3chg2').attr('checked');}
+      if (weapons[2].charge[2])      {$('#wpn3chg3').attr('checked');}
+      if (weapons[2].drain[0])       {$('#wpn3drn1').attr('checked');}
+      if (weapons[2].drain[1])       {$('#wpn3drn2').attr('checked');}
+      if (weapons[2].drain[2])       {$('#wpn3drn3').attr('checked');}
+      if (weapons[2].type.intrinsic) {$('#wpn3').addClass('intrinsic');}
+      if (weapons[2].type.relic)     {$('#wpn3').addClass('relic');}
+      if (weapons[2].type.intrinsic) {$('#wpn3').addClass('companion');}
+
    }
 
    function hideWRelentlessnessU() {$('#wuserelentlessnessu, #wrelentlessnessuwut, #wrelentlessnessuwut + br').hide();}
@@ -674,6 +732,27 @@
       "swiftness-quick": {"displayName": "Swiftness - Quick", "has": false},
       "swiftness-bloody": {"displayName": "Swiftness - Bloody", "has": false}
    };
+   var blankWeapon = {
+      'name': '',
+      'type': {
+         'intrinsic': false,
+         'relic': false,
+         'companion': false
+      },
+      'charge': [false, false, false],
+      'drain': [false, false, false]
+   }
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
