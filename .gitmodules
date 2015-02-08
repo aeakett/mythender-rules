@@ -1,0 +1,3 @@
+[submodule "mythdice"]
+	path = mythdice
+	url = git@github.com:aeakett/mythdice.git
