@@ -11,6 +11,7 @@
    <link rel="stylesheet" href="css/jquery-ui.min.css">
 </head>
 <body>
+
 <div id="accordion">
    <h3>Status</h3>
    <div id="status">
@@ -41,6 +42,7 @@
             [<input id="wpn3chg3" name="wpn3chg3" type="checkbox"><input id="wpn3drn3" name="wpn3drn3" type="checkbox">]
          </div>
       </div>
+      <div>Gifts: <span id="giftList"></span></div>
    </div>
    <h3>Legendary Action<a title="This is a regular... awesome action" class="accordianExplanation">?</a></h3>
    <div id="legendary">
@@ -308,6 +310,11 @@
       $('#woundCost').val(num);
    }
 
+   function saveGifts() {
+      simpleStorage.set('globalGifts', gifts);
+      renderGifts();
+   }
+
    function loadThunder() {
       var thunder=simpleStorage.get('globalThunder');
       if (thunder) {
@@ -347,6 +354,13 @@
       $('#woundCost').val(woundCost);
    }
 
+   function loadGifts() {
+      var thisGifts=simpleStorage.get('globalGifts');
+      if (!thisGifts) { thisGifts=noGifts; }
+      gifts=thisGifts;
+      renderGifts();
+   }
+
    function getMight() {
       return $('#might').val();
    }
@@ -361,6 +375,27 @@
    }
    function getWoundCost() {
       return $('#woundCost').val();
+   }
+
+   function addGift(giftID) {
+      gifts[giftID]['has']=true;
+      saveGifts();
+   }
+
+   function removeGift(giftID) {
+      gifts[giftID]['has']=false;
+      saveGifts();
+   }
+
+   function renderGifts() {
+      $('#giftList').html('')
+      for (var i in gifts) {
+         if (gifts.hasOwnProperty(i)) {
+            if (gifts[i]['has']) {
+               $('#giftList').append(gifts[i]['displayName']);
+            }
+         }
+      }
    }
 
    function hideWRelentlessnessU() {$('#wuserelentlessnessu, #wrelentlessnessuwut, #wrelentlessnessuwut + br').hide();}
@@ -380,6 +415,7 @@
       loadStorm();
       loadLightning();
       loadWoundCost();
+      loadGifts();
    }
 
    $( document ).ready(function() {
@@ -430,7 +466,11 @@
 
          $('#woundRollResults').append('<p id="wdiscard" data-discard="'+discard+'">discard '+discard+'</p>');
          if (discard > 0) {
-            showWRelentlessnessU(); showWBloodlust(); showWBloodlustQ(); showWBloodlustD(); showWBloodlustDQ();
+            if (gifts['relentlessness']['has']) {showWRelentlessnessU();}
+            if (gifts['bloodlust']['has']) {showWBloodlust();}
+            if (gifts['bloodlust-quick']['has']) {showWBloodlustQ();}
+            if (gifts['bloodlust-dangerous']['has']) {showWBloodlustD();}
+            if (gifts['bloodlust-dangerous']['has'] && gifts['bloodlust-quick']['has']) {showWBloodlustDQ();}
          }
          $('#woundRollResultsReset, #woundRoll').toggle();
       });
@@ -603,6 +643,37 @@
 
       
    });
+   var noGifts = {
+      "blazeOfGlory": {"displayName": "Blaze of Glory", "has": false},
+      "bloodlust": {"displayName": "Bloodlust", "has": false},
+      "bloodlust-dangerous": {"displayName": "Bloodlust - Dangerous", "has": false},
+      "bloodlust-quick": {"displayName": "Bloodlust - Quick", "has": false},
+      "channeledHatred": {"displayName": "Channeled Hatred", "has": false},
+      "dualWield": {"displayName": "Dual Wield", "has": false},
+      "fastStrike": {"displayName": "Fast Strike", "has": false},
+      "focusedOnslaught": {"displayName": "Focused Onslaught", "has": false},
+      "grievousHarm": {"displayName": "Grievous Harm", "has": false},
+      "grievousHarm-vicious": {"displayName": "Grievous Harm - Vicious", "has": false},
+      "grievousHarm-precise": {"displayName": "Grievous Harm - Precise", "has": false},
+      "grievousHarmaiding": {"displayName": "Grievous Harm - Aiding", "has": false},
+      "harbingerOfStorm": {"displayName": "Harbinger of Storm", "has": false},
+      "harbingerOfStorm-raging": {"displayName": "Harbinger of Storm - Raging", "has": false},
+      "harbingerOfStorm-surging": {"displayName": "Harbinger of Storm - Surging", "has": false},
+      "masterTactician": {"displayName": "Master Tactician", "has": false},
+      "mightyPresence": {"displayName": "Mighty Presence", "has": false},
+      "relentlessness": {"displayName": "Relentlessness", "has": false},
+      "relentlessness-aiding": {"displayName": "Relentlessness - Aiding", "has": false},
+      "relentlessness-unrepentant": {"displayName": "Relentlessness - Unrepentant", "has": false},
+      "sureness": {"displayName": "Sureness", "has": false},
+      "sureness-precise": {"displayName": "Sureness - Precise", "has": false},
+      "sureness-quick": {"displayName": "Sureness - Quick", "has": false},
+      "sureness-unyielding": {"displayName": "Sureness - Unyielding", "has": false},
+      "surgeOfMight": {"displayName": "Surge of Might", "has": false},
+      "swiftness": {"displayName": "Swiftness", "has": false},
+      "swiftness-aiding": {"displayName": "Swiftness - Aiding", "has": false},
+      "swiftness-quick": {"displayName": "Swiftness - Quick", "has": false},
+      "swiftness-bloody": {"displayName": "Swiftness - Bloody", "has": false}
+   };
 </script>
 </body>
 </html>
