@@ -3,7 +3,7 @@
 <head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <title></title>
+   <title>Dice roller</title>
    <meta name="description" content="">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="css/main.css">
@@ -12,7 +12,36 @@
 </head>
 <body>
 <div id="accordion">
-   
+   <h3>Status</h3>
+   <div id="status">
+      <div>Might: <input id="might" name="might" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
+      <div>Lighting: <input id="lightning" name="lightning" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
+      <div>Thunder: <input id="thunder" name="thunder" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
+      <div>Storm: <input id="storm" name="storm" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
+      <div>Wound #: <input id="woundNo" name="woundNo" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
+      <div>Wound cost:<input id="woundCost" name="woundCost" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
+      <div id="weapons">
+         Weapons
+         <div id="wpn1">
+            <input id="wpn1name" name="wpn1name">
+            [<input id="wpn1chg1" name="wpn1chg1" type="checkbox"><input id="wpn1drn1" name="wpn1drn1" type="checkbox">]
+            [<input id="wpn1chg2" name="wpn1chg2" type="checkbox"><input id="wpn1drn2" name="wpn1drn2" type="checkbox">]
+            [<input id="wpn1chg3" name="wpn1chg3" type="checkbox"><input id="wpn1drn3" name="wpn1drn3" type="checkbox">]
+         </div>
+         <div id="wpn2">
+            <input id="wpn2name" name="wpn2name">
+            [<input id="wpn2chg1" name="wpn2chg1" type="checkbox"><input id="wpn2drn1" name="wpn2drn1" type="checkbox">]
+            [<input id="wpn2chg2" name="wpn2chg2" type="checkbox"><input id="wpn2drn2" name="wpn2drn2" type="checkbox">]
+            [<input id="wpn2chg3" name="wpn2chg3" type="checkbox"><input id="wpn2drn3" name="wpn2drn3" type="checkbox">]
+         </div>
+         <div id="wpn3">
+            <input id="wpn3name" name="wpn3name">
+            [<input id="wpn3chg1" name="wpn3chg1" type="checkbox"><input id="wpn3drn1" name="wpn3drn1" type="checkbox">]
+            [<input id="wpn3chg2" name="wpn3chg2" type="checkbox"><input id="wpn3drn2" name="wpn3drn2" type="checkbox">]
+            [<input id="wpn3chg3" name="wpn3chg3" type="checkbox"><input id="wpn3drn3" name="wpn3drn3" type="checkbox">]
+         </div>
+      </div>
+   </div>
    <h3>Legendary Action<a title="This is a regular... awesome action" class="accordianExplanation">?</a></h3>
    <div id="legendary">
       <label for="lStorm">Storm</label><br>
@@ -109,6 +138,7 @@
             close: 'animated bounceOutDown'
          }
       });
+      saveThunder(getThunder()-num);
    }
    function gainThunder(num) {
       var n = noty({
@@ -124,6 +154,7 @@
             close: 'animated bounceOutDown'
          }
       });
+      saveThunder(getThunder()+num);
    }
    function payMight(num) {
       var n = noty({
@@ -139,6 +170,7 @@
             close: 'animated bounceOutDown'
          }
       });
+      saveMight(getMight()-num);
    }
    function gainMight(num) {
       var n = noty({
@@ -154,6 +186,23 @@
             close: 'animated bounceOutDown'
          }
       });
+      saveMight(getMight()+num);
+   }
+   function payLightning(num) {
+      var n = noty({
+         text        : '<span class="gainLosePay">pay '+num+' Lightning</span><img height="300" src="img/lightning.svg">',
+         type        : 'alert',
+         maxVisible  : 1,
+         dismissQueue: true,
+         modal       : true,
+         layout      : 'center',
+         theme       : 'mythdice_theme',
+         animation: {
+            open: 'animated bounceInDown',
+            close: 'animated bounceOutDown'
+         }
+      });
+      saveLightning(getLightning()-num);
    }
    function gainLightning(num) {
       var n = noty({
@@ -169,6 +218,7 @@
             close: 'animated bounceOutDown'
          }
       });
+      saveLightning(getLightning()+num);
    }
    function drawThunderDie(num) {
       return drawDie(num, 'thunder');
@@ -216,6 +266,7 @@
       $('#lThunder').val(num);
       $('#mThunder').val(num);
       $('#tThunder').val(num);
+      $('#thunder').val(num);
    }
 
    function saveStorm(num) {
@@ -223,6 +274,7 @@
       $('#lStorm').val(num);
       $('#mStorm').val(num);
       $('#tStorm').val(num);
+      $('#storm').val(num);
    }
 
    function saveMight(num) {
@@ -230,28 +282,54 @@
       $('#might').val(num);
    }
 
+   function saveLightning(num) {
+      simpleStorage.set('globalLightning', num);
+      $('#lightning').val(num);
+   }
+
    function loadThunder() {
-      if (simpleStorage.get('globalThunder')) {
-         $('#woundThunder').val(simpleStorage.get('globalThunder'));
-         $('#lThunder').val(simpleStorage.get('globalThunder'));
-         $('#mThunder').val(simpleStorage.get('globalThunder'));
-         $('#tThunder').val(simpleStorage.get('globalThunder'));
+      var thunder=simpleStorage.get('globalThunder');
+      if (thunder) {
+         $('#woundThunder').val(thunder);
+         $('#lThunder').val(thunder);
+         $('#mThunder').val(thunder);
+         $('#tThunder').val(thunder);
+         $('#thunder').val(thunder);
       }
    }
 
    function loadStorm() {
-      if (simpleStorage.get('globalStorm')) {
-         $('#lStorm').val(simpleStorage.get('globalStorm'));
-         $('#mStorm').val(simpleStorage.get('globalStorm'));
-         $('#tStorm').val(simpleStorage.get('globalStorm'));
+      var storm=simpleStorage.get('globalStorm');
+      if (storm) {
+         $('#lStorm').val(storm);
+         $('#mStorm').val(storm);
+         $('#tStorm').val(storm);
+         $('#storm').val(storm);
       }
    }
 
    function loadMight() {
-      if (simpleStorage.get('globalMight')) {
-         $('#might').val(simpleStorage.get('globalMight'));
-      }
+      var might=simpleStorage.get('globalMight');
+      if (!might) { might=0; }
+      $('#might').val(might);
    }
+
+   function loadLightning() {
+      var lightning=simpleStorage.get('globalLightning');
+      if (!lightning) { lightning=0; }
+      $('#lightning').val(lightning);
+   }
+
+   function getMight() {
+      return $('#might').val();
+   }
+   function getLightning() {
+      return $('#lightning').val();
+   }
+   function getThunder() {
+      return $('#thunder').val();
+   }
+
 
    function hideWRelentlessnessU() {$('#wuserelentlessnessu, #wrelentlessnessuwut, #wrelentlessnessuwut + br').hide();}
    function hideWBloodlust() {$('#wusebloodlust, #wbloodlustwut, #wbloodlustwut + br').hide();}
@@ -264,10 +342,27 @@
    function showWBloodlustD() {$('#wusebloodlustd, #wbloodlustdwut, #wbloodlustdwut + br').show();}
    function showWBloodlustDQ() {$('#wusebloodlustdq, #wbloodlustdqwut, #wbloodlustdqwut + br').show();}
 
-   $( document ).ready(function() {
-      /* set storm & thunder from global */
+   function init() {
+      loadMight();
       loadThunder();
       loadStorm();
+      loadLightning();
+   }
+
+   $( document ).ready(function() {
+      init();
+      $('#storm').change(function(){
+         saveStorm($(this).val());
+      });
+      $('#thunder').change(function(){
+         saveThunder($(this).val());
+      });
+      $('#might').change(function(){
+         saveMight($(this).val());
+      });
+      $('#lightning').change(function(){
+         saveLightning($(this).val());
+      });
 
       $('#woundRoll').click(function(){
          var discard=0;
