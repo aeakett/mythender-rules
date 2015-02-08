@@ -3,7 +3,7 @@
 <head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <title>Dice roller</title>
+   <title>Mythender dice roller</title>
    <meta name="description" content="">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="css/main.css">
@@ -18,7 +18,7 @@
       <div>Lighting: <input id="lightning" name="lightning" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
       <div>Thunder: <input id="thunder" name="thunder" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
       <div>Storm: <input id="storm" name="storm" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
-      <div>Wound #: <input id="woundNo" name="woundNo" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
+      <div id="woundTrack">Wounds: <input id="woundNo" name="woundNo" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
       <div>Wound cost:<input id="woundCost" name="woundCost" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
       <div id="weapons">
          Weapons
@@ -220,6 +220,22 @@
       });
       saveLightning(parseInt(getLightning())+parseInt(num));
    }
+   function gainStorm(num) {
+      var n = noty({
+         text        : '<span class="gainLosePay">gain '+num+' Storm Dice</span><img height="300" src="img/stormDiceRing.svg">',
+         type        : 'alert',
+         maxVisible  : 1,
+         dismissQueue: true,
+         modal       : true,
+         layout      : 'center',
+         theme       : 'mythdice_theme',
+         animation: {
+            open: 'animated bounceInDown',
+            close: 'animated bounceOutDown'
+         }
+      });
+      saveStorm(parseInt(getStorm())+parseInt(num));
+   }
    function drawThunderDie(num) {
       return drawDie(num, 'thunder');
    }
@@ -287,6 +303,11 @@
       $('#lightning').val(num);
    }
 
+   function saveWoundCost(num) {
+      simpleStorage.set('globalWoundCost', num);
+      $('#woundCost').val(num);
+   }
+
    function loadThunder() {
       var thunder=simpleStorage.get('globalThunder');
       if (thunder) {
@@ -320,6 +341,12 @@
       $('#lightning').val(lightning);
    }
 
+   function loadWoundCost() {
+      var woundCost=simpleStorage.get('globalWoundCost');
+      if (!woundCost) { woundCost=0; }
+      $('#woundCost').val(woundCost);
+   }
+
    function getMight() {
       return $('#might').val();
    }
@@ -329,7 +356,12 @@
    function getThunder() {
       return $('#thunder').val();
    }
-
+   function getStorm() {
+      return $('#storm').val();
+   }
+   function getWoundCost() {
+      return $('#woundCost').val();
+   }
 
    function hideWRelentlessnessU() {$('#wuserelentlessnessu, #wrelentlessnessuwut, #wrelentlessnessuwut + br').hide();}
    function hideWBloodlust() {$('#wusebloodlust, #wbloodlustwut, #wbloodlustwut + br').hide();}
@@ -347,6 +379,7 @@
       loadThunder();
       loadStorm();
       loadLightning();
+      loadWoundCost();
    }
 
    $( document ).ready(function() {
@@ -362,6 +395,9 @@
       });
       $('#lightning').change(function(){
          saveLightning($(this).val());
+      });
+      $('#woundCost').change(function(){
+         saveWoundCost($(this).val());
       });
 
       $('#woundRoll').click(function(){
