@@ -21,7 +21,7 @@
       <div>Storm: <input id="storm" name="storm" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
       <div id="woundTrack">Wounds: <input id="woundNo" name="woundNo" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
       <div>Wound cost:<input id="woundCost" name="woundCost" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
-      <div id="weapons">
+      <div id="wpns">
          Weapons
          <div id="wpn1">
             <input id="wpn1name" name="wpn1name">
@@ -368,7 +368,7 @@
 
    function loadWeapons() {
       var thisWeapons=simpleStorage.get('globalWeapons');
-      if (!thisWeapons) { thisWeapons[0]=blankWeapon; thisWeapons[1]=blankWeapon; thisWeapons[2]=blankWeapon; }
+      if (!thisWeapons) { thisWeapons= [blankWeapon, blankWeapon, blankWeapon]; }
       weapons=thisWeapons;
       renderWeapons();
    }
@@ -497,7 +497,10 @@
       loadStorm();
       loadLightning();
       loadWoundCost();
+      window.gifts='';
       loadGifts();
+      window.weapons='';
+      loadWeapons();
    }
 
    $( document ).ready(function() {
