@@ -1,0 +1,36 @@
+.clearfix:before,
+.clearfix:after {
+   content: " ";
+   display: table;
+}
+
+.clearfix:after {
+   clear: both;
+}
+
+.hidden {display: none;}
+.wfailed {
+   color: #f00;
+   background-color: #91180e;
+}
+#legenday, #mythic, #titanic, #wound {
+   text-align: center;
+}
+.thunderDie {
+   width: 1em;
+   padding: .1em;
+}
+html, body {
+   height: 100%;
+   background-color: #91180e;
+}
+#accordion {
+   height: 100%;
+}
+a.accordianExplanation {float: right;}
+
+.gainLosePay {
+   font-family: Impact, sans-serif;
+   font-size: 300%;
+   line-height: normal;
+}

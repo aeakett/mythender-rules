@@ -1,0 +1,477 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title></title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/animate.min.css">
+   <link rel="stylesheet" href="css/jquery-ui.min.css">
+</head>
+<body>
+<div id="accordion">
+   
+   <h3>Legendary Action<a title="This is a regular... awesome action" class="accordianExplanation">?</a></h3>
+   <div id="legendary">
+      <label for="lStorm">Storm</label><br>
+      <input id="lStorm" name="lStorm" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
+      <label for="lThunder">Thunder</label><br>
+      <input id="lThunder" name="lThunder" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
+      <label for="lBStorm">bonus Storm</label><br>
+      <input id="lBStorm" name="lBStorm" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
+      <label for="lBThunder">bonus Thunder</label><br>
+      <input id="lBThunder" name="lBThunder" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
+      <button id="lRoll">Roll</button>
+
+
+   </div>
+   <h3>Mythic Action<a title="A super-human, awesome action" class="accordianExplanation">?</a></h3>
+   <div id="mythic">
+      <label for="mStorm">Storm</label><br>
+      <input id="mStorm" name="mStorm" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
+      <label for="mThunder">Thunder</label><br>
+      <input id="mThunder" name="mThunder" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
+      <label for="mBStorm">bonus Storm</label><br>
+      <input id="mBStorm" name="mBStorm" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
+      <label for="mBThunder">bonus Thunder</label><br>
+      <input id="mBThunder" name="mBThunder" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
+      <button id="mRoll">Roll</button>
+   </div>
+   <h3>Titanic Action<a title="Wait... you're doing <em>what</em>?" class="accordianExplanation">?</a></h3>
+   <div id="titanic">
+      <label for="tStorm">Storm</label><br>
+      <input id="tStorm" name="tStorm" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
+      <label for="tThunder">Thunder</label><br>
+      <input id="tThunder" name="tThunder" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
+      <label for="tBStorm">bonus Storm</label><br>
+      <input id="tBStorm" name="tBStorm" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
+      <button id="tRoll">Roll</button>
+   </div>
+   <h3>Wounding<a title="Uh-oh!" class="accordianExplanation">?</a></h3>
+   <div id="wound">
+      <label for="wno">Wound number</label><br>
+      <input id="wno" name="wno" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
+      <label for="woundThunder">Thunder</label><br>
+      <input id="woundThunder" name="woundThunder" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
+      <button id="woundRoll">Roll</button>
+      <div id="woundRollResults"></div>
+      <button id="wusebloodlust" class="hidden">Use Bloodlust</button><button id="wbloodlustwut" class="hidden">?</button><br>
+      <button id="wusebloodlustq" class="hidden">Use Bloodlust - Quick</button><button id="wbloodlustqwut" class="hidden">?</button><br>
+      <button id="wusebloodlustd" class="hidden">Use Bloodlust - Dangerous</button><button id="wbloodlustdwut" class="hidden">?</button><br>
+      <button id="wusebloodlustdq" class="hidden">Use Bloodlust - Dangerous &amp; Quick</button><button id="wbloodlustdqwut" class="hidden">?</button><br>
+      <button id="wuserelentlessnessu" class="hidden">Use Relentlessness - Unrepentant</button><button id="wrelentlessnessuwut" class="hidden">?</button><br>
+      <button id="woundRollResultsReset" class="hidden">OK</button>
+   </div>
+   <h3>About</h3>
+   <div id="about">
+      <p>This site is copyright 2014 by Andrew Eakett</p>
+
+      <p>This work is based on the Mythender Roleplaying Game, written and published by Ryan Macklin, and licensed for our use under the Creative Commons Attribution-NonCommercial 3.0 Unported license.</p>
+   </div>
+</div>
+
+
+
+
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/fastclick.js"></script>
+<script src="js/jquery.noty.packaged.min.js"></script>
+<script src="js/mythdice_theme.js"></script>
+<script src="js/simpleStorage.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+
+<script>
+   $(function() {
+      FastClick.attach(document.body);
+   });
+
+   $( "#accordion" ).accordion({heightStyle: "fill"});
+   $( document ).tooltip();
+
+   function roll() {
+      return Math.floor((Math.random()*6)+1);
+   }
+
+   function loseThunder(num) {
+      var n = noty({
+         text        : '<span class="gainLosePay">lose '+num+' Thunder</span><img height="280" src="img/thunderDiceRing.svg">',
+         type        : 'alert',
+         maxVisible  : 1,
+         dismissQueue: true,
+         modal       : true,
+         layout      : 'center',
+         theme       : 'mythdice_theme',
+         animation: {
+            open: 'animated bounceInDown',
+            close: 'animated bounceOutDown'
+         }
+      });
+   }
+   function gainThunder(num) {
+      var n = noty({
+         text        : '<span class="gainLosePay">gain '+num+' Thunder</span><img height="280" src="img/thunderDiceRing.svg">',
+         type        : 'alert',
+         maxVisible  : 1,
+         dismissQueue: true,
+         modal       : true,
+         layout      : 'center',
+         theme       : 'mythdice_theme',
+         animation: {
+            open: 'animated bounceInDown',
+            close: 'animated bounceOutDown'
+         }
+      });
+   }
+   function payMight(num) {
+      var n = noty({
+         text        : '<span class="gainLosePay">pay '+num+' Might</span><img height="300" src="img/fist.svg">',
+         type        : 'alert',
+         maxVisible  : 1,
+         dismissQueue: true,
+         modal       : true,
+         layout      : 'center',
+         theme       : 'mythdice_theme',
+         animation: {
+            open: 'animated bounceInDown',
+            close: 'animated bounceOutDown'
+         }
+      });
+   }
+   function gainMight(num) {
+      var n = noty({
+         text        : '<span class="gainLosePay">gain '+num+' Might</span><img height="300" src="img/fist.svg">',
+         type        : 'alert',
+         maxVisible  : 1,
+         dismissQueue: true,
+         modal       : true,
+         layout      : 'center',
+         theme       : 'mythdice_theme',
+         animation: {
+            open: 'animated bounceInDown',
+            close: 'animated bounceOutDown'
+         }
+      });
+   }
+   function gainLightning(num) {
+      var n = noty({
+         text        : '<span class="gainLosePay">gain '+num+' Lightning</span><img height="300" src="img/lightning.svg">',
+         type        : 'alert',
+         maxVisible  : 1,
+         dismissQueue: true,
+         modal       : true,
+         layout      : 'center',
+         theme       : 'mythdice_theme',
+         animation: {
+            open: 'animated bounceInDown',
+            close: 'animated bounceOutDown'
+         }
+      });
+   }
+   function drawThunderDie(num) {
+      return drawDie(num, 'thunder');
+   }
+   function drawStormDie(num) {
+      return drawDie(num, 'storm');
+   }
+   function drawBonusThunderDie(num) {
+      return drawDie(num, 'bonusThunder');
+   }
+   function drawBonusStormDie(num) {
+      return drawDie(num, 'bonusStorm');
+   }
+   function drawThunderDie(num) {
+      return drawDie(num, 'thunder');
+   }
+   function drawMythicDie(num) {
+      return drawDie(num, 'mythic');
+   }
+   function drawDie(num, type) {
+      var classPrefix=type;
+      switch (type) {
+      case 'thunder':
+         var diePrefix = 't';
+         break;
+      case 'bonusThunder':
+         var diePrefix = 'bt';
+         break;
+      case 'storm':
+         var diePrefix = 's';
+         break;
+      case 'bonusStorm':
+         var diePrefix = 'bs';
+         break;
+      case 'mythic':
+         var diePrefix = 'm';
+         break;
+      }
+      return '<img class="die '+classPrefix+'Die" src="img/'+diePrefix+'d'+num+'.svg" />';
+   }
+
+   function saveThunder(num) {
+      simpleStorage.set('globalThunder', num);
+      $('#woundThunder').val(num);
+      $('#lThunder').val(num);
+      $('#mThunder').val(num);
+      $('#tThunder').val(num);
+   }
+
+   function saveStorm(num) {
+      simpleStorage.set('globalStorm', num);
+      $('#lStorm').val(num);
+      $('#mStorm').val(num);
+      $('#tStorm').val(num);
+   }
+
+   function saveMight(num) {
+      simpleStorage.set('globalMight', num);
+      $('#might').val(num);
+   }
+
+   function loadThunder() {
+      if (simpleStorage.get('globalThunder')) {
+         $('#woundThunder').val(simpleStorage.get('globalThunder'));
+         $('#lThunder').val(simpleStorage.get('globalThunder'));
+         $('#mThunder').val(simpleStorage.get('globalThunder'));
+         $('#tThunder').val(simpleStorage.get('globalThunder'));
+      }
+   }
+
+   function loadStorm() {
+      if (simpleStorage.get('globalStorm')) {
+         $('#lStorm').val(simpleStorage.get('globalStorm'));
+         $('#mStorm').val(simpleStorage.get('globalStorm'));
+         $('#tStorm').val(simpleStorage.get('globalStorm'));
+      }
+   }
+
+   function loadMight() {
+      if (simpleStorage.get('globalMight')) {
+         $('#might').val(simpleStorage.get('globalMight'));
+      }
+   }
+
+   function hideWRelentlessnessU() {$('#wuserelentlessnessu, #wrelentlessnessuwut, #wrelentlessnessuwut + br').hide();}
+   function hideWBloodlust() {$('#wusebloodlust, #wbloodlustwut, #wbloodlustwut + br').hide();}
+   function hideWBloodlustQ() {$('#wusebloodlustq, #wbloodlustqwut, #wbloodlustqwut + br').hide();}
+   function hideWBloodlustD() {$('#wusebloodlustd, #wbloodlustdwut, #wbloodlustdwut + br').hide();}
+   function hideWBloodlustDQ() {$('#wusebloodlustdq, #wbloodlustdqwut, #wbloodlustdqwut + br').hide();}
+   function showWRelentlessnessU() {$('#wuserelentlessnessu, #wrelentlessnessuwut, #wrelentlessnessuwut + br').show();}
+   function showWBloodlust() {$('#wusebloodlust, #wbloodlustwut, #wbloodlustwut + br').show();}
+   function showWBloodlustQ() {$('#wusebloodlustq, #wbloodlustqwut, #wbloodlustqwut + br').show();}
+   function showWBloodlustD() {$('#wusebloodlustd, #wbloodlustdwut, #wbloodlustdwut + br').show();}
+   function showWBloodlustDQ() {$('#wusebloodlustdq, #wbloodlustdqwut, #wbloodlustdqwut + br').show();}
+
+   $( document ).ready(function() {
+      /* set storm & thunder from global */
+      loadThunder();
+      loadStorm();
+
+      $('#woundRoll').click(function(){
+         var discard=0;
+         var effectiveno = $('#wno').val();
+         for (var i=0; i < $('#woundThunder').val(); i++) {
+            var result=roll();
+            if (result >= effectiveno) {
+               $('#woundRollResults').append('<span>'+drawThunderDie(result)+'</span>');
+            } else {
+               $('#woundRollResults').append('<span class="wfailed" date-result="'+result+'">'+drawThunderDie(result)+'</span>');
+               discard++;
+            }
+         }
+         // Deal with wound numbers greater than 6
+         if (effectiveno > 6) {
+            console.log('wound no. is greater than 6!');
+            $('.wfailed[data-result="6"]').each(function(){
+               console.log('processing a failed 6');
+               if (effectiveno == 6) {
+                  $(this).removeClass('wfailed');
+                  discard--;
+               } else {
+                  effectiveno--;
+               }
+            });
+         }
+         $('#wno').attr('weffectiveno',effectiveno);
+
+
+         $('#woundRollResults').append('<p id="wdiscard" data-discard="'+discard+'">discard '+discard+'</p>');
+         if (discard > 0) {
+            showWRelentlessnessU(); showWBloodlust(); showWBloodlustQ(); showWBloodlustD(); showWBloodlustDQ();
+         }
+         $('#woundRollResultsReset, #woundRoll').toggle();
+      });
+
+      $('#woundRollResultsReset').click(function(){
+         var prevThunder = $('#woundThunder').val();
+         var discarding = $('#wdiscard').attr('discard');
+         var newThunder = prevThunder - discarding;
+         if (discarding > 0) {loseThunder(discarding);}
+         saveThunder(newThunder);
+         $('#woundRollResults').empty();
+         $('#woundRollResultsReset, #woundRoll').toggle();
+         hideWRelentlessnessU(); hideWBloodlust(); hideWBloodlustQ(); hideWBloodlustD(); hideWBloodlustDQ();
+      });
+
+      $('#wbloodlustwut').click(function(){
+         var n = noty({
+            text        : 'Pay 2 Might tokens when you’re Wounded and have lost Thunder dice. Gain Lightning tokens equal to the Thunder dice lost.\n\nIf a Mythender dies and comes back, all the Thunder dice lost before coming back count for this Gift.',
+            type        : 'information',
+            maxVisible  : 1,
+            dismissQueue: true,
+            layout      : 'center',
+            theme       : 'mythdice_theme',
+            animation: {
+               open: 'animated zoomIn',
+               close: 'animated zoomOut'
+            }
+         });
+      });
+      $('#wbloodlustdwut').click(function(){
+         var n = noty({
+            text        : 'Pay 5 Might tokens when you’re Wounded and have lost Thunder dice. Gain Lightning tokens equal to twice the Thunder dice lost.\n\nIf a Mythender dies and comes back, all the Thunder dice lost before coming back count for this Gift.',
+            type        : 'information',
+            maxVisible  : 1,
+            dismissQueue: true,
+            layout      : 'center',
+            theme       : 'mythdice_theme',
+            animation: {
+               open: 'animated zoomIn',
+               close: 'animated zoomOut'
+            }
+         });
+      });
+      $('#wbloodlustqwut').click(function(){
+         var n = noty({
+            text        : 'Pay 1 Might token when you’re Wounded and have lost Thunder dice. Gain Lightning tokens equal to the Thunder dice lost.\n\nIf a Mythender dies and comes back, all the Thunder dice lost before coming back count for this Gift.',
+            type        : 'information',
+            maxVisible  : 1,
+            dismissQueue: true,
+            layout      : 'center',
+            theme       : 'mythdice_theme',
+            animation: {
+               open: 'animated zoomIn',
+               close: 'animated zoomOut'
+            }
+         });
+      });
+      $('#wbloodlustdqwut').click(function(){
+         var n = noty({
+            text        : 'Pay 4 Might tokens when you’re Wounded and have lost Thunder dice. Gain Lightning tokens equal to twice the Thunder dice lost.\n\nIf a Mythender dies and comes back, all the Thunder dice lost before coming back count for this Gift.',
+            type        : 'information',
+            maxVisible  : 1,
+            dismissQueue: true,
+            layout      : 'center',
+            theme       : 'mythdice_theme',
+            animation: {
+               open: 'animated zoomIn',
+               close: 'animated zoomOut'
+            }
+         });
+      });
+      $('#wrelentlessnessuwut').click(function(){
+         var n = noty({
+            text        : 'Pay 3 Might tokens when Wounded. Reroll failed Thunder dice. Spend after rolling. Describe how you’re pushing harder to recover from a fumble.',
+            type        : 'information',
+            maxVisible  : 1,
+            dismissQueue: true,
+            layout      : 'center',
+            theme       : 'mythdice_theme',
+            animation: {
+               open: 'animated zoomIn',
+               close: 'animated zoomOut'
+            }
+         });
+      });
+
+      $('#wusebloodlust').click(function(){
+         payMight(2);
+         gainLightning($('#wdiscard').attr('data-discard'));
+         hideWRelentlessnessU(); hideWBloodlust(); hideWBloodlustQ(); hideWBloodlustD(); hideWBloodlustDQ();
+      });
+
+      $('#wusebloodlustq').click(function(){
+         payMight(1);
+         gainLightning($('#wdiscard').attr('data-discard'));
+         hideWRelentlessnessU(); hideWBloodlust(); hideWBloodlustQ(); hideWBloodlustD(); hideWBloodlustDQ();
+      });
+
+      $('#wusebloodlustd').click(function(){
+         payMight(5);
+         gainLightning($('#wdiscard').attr('data-discard')*2);
+         hideWRelentlessnessU(); hideWBloodlust(); hideWBloodlustQ(); hideWBloodlustD(); hideWBloodlustDQ();
+      });
+
+      $('#wusebloodlustdq').click(function(){
+         payMight(4);
+         gainLightning($('#wdiscard').attr('data-discard')*2);
+         hideWRelentlessnessU(); hideWBloodlust(); hideWBloodlustQ(); hideWBloodlustD(); hideWBloodlustDQ();
+      });
+
+      $('#wuserelentlessnessu').click(function(){
+         // pony up
+         payMight(3);
+         // grab the number of rerolls we have to do
+         var numRerolls=$('#wdiscard').attr('data-discard'); console.log('rerolling: '+numRerolls);
+         // remove the old discard number
+         $('#wdiscard').remove();
+         // remove the rolls we're redoing
+         $('.wfailed').remove();
+         // make sure to describe the awesome
+         var n = noty({
+            text        : 'Describe how you’re pushing harder to recover from a fumble.',
+            type        : 'information',
+            maxVisible  : 1,
+            dismissQueue: true,
+            layout      : 'center',
+            theme       : 'mythdice_theme',
+            animation: {
+               open: 'animated zoomIn',
+               close: 'animated zoomOut'
+            }
+         });
+
+
+         // do rerolls
+         var discard=0;
+         var effectiveno = $('#wno').attr('weffectiveno');
+         console.log('effective number is: '+effectiveno);
+         for (var i=0; i < numRerolls; i++) {
+            var result=roll();
+            if (result >= effectiveno) {
+               $('#woundRollResults').append('<span>'+drawThunderDie(result)+'</span>');
+            } else {
+               $('#woundRollResults').append('<span class="wfailed" data-result="'+result+'">'+drawThunderDie(result)+'</span>');
+               discard++;
+            }
+         }
+         // Deal with wound numbers greater than 6
+         if (effectiveno > 6) {
+            console.log('Relentlessness: wound no. is greater than 6!');
+            $('.wfailed[data-result="6"]').each(function(){
+               console.log('processing a failed 6');
+               if (effectiveno == 6) {console.log()
+                  $(this).removeClass('wfailed');
+                  discard--;
+               } else {
+                  effectiveno--;
+                  console.log('effective number is: '+effectiveno);
+               }
+            });
+         }
+         $('#wno').attr('weffectiveno',effectiveno);
+
+
+         $('#woundRollResults').append('<p id="wdiscard" data-discard="'+discard+'">discard '+discard+'</p>');
+         
+         // since we can't use the same gift twice, remove relentlessness
+         hideWRelentlessnessU();
+      });
+
+      
+   });
+</script>
+</body>
+</html>
