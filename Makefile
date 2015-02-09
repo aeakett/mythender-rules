@@ -4,7 +4,7 @@ OUTDIR=dist
 INPUT=$(filter-out $(TEMPLATE),$(wildcard *.html *.htm))
 OUTPUT=$(patsubst %,$(OUTDIR)/%,$(INPUT))
 
-COPYSRC=$(wildcard *.png) dice css js img robots.txt sitemap.xml favicon.ico bower_components
+COPYSRC=$(wildcard *.png) dice css js img robots.txt humans.txt sitemap.xml favicon.ico bower_components
 COPYDST=$(patsubst %,$(OUTDIR)/%,$(COPYSRC))
 
 all: $(OUTDIR) $(OUTPUT) $(COPYDST)
