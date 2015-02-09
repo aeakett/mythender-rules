@@ -8985,7 +8985,7 @@ th.hide-for-touch {
 
 /* line 61, src/_main.scss */
 h1 {
-  color: #91180e;
+  color: #8b0304;
   font-size: 2em;
 }
 
@@ -9042,7 +9042,7 @@ h2 {
 
 /* line 107, src/_main.scss */
 .gameKeyword {
-  color: #91180e;
+  color: #8b0304;
   font-variant: small-caps;
   font-weight: bold;
 }
@@ -9091,13 +9091,13 @@ a:hover {
 /* line 147, src/_main.scss */
 .bonusDie {
   font-family: blackdice;
-  color: #91180e;
+  color: #8b0304;
 }
 
 /* line 152, src/_main.scss */
 .mythicDie {
   font-family: mythicdice;
-  color: #91180e;
+  color: #8b0304;
   font-size: 125%;
   position: relative;
   bottom: -.15em;
@@ -9175,7 +9175,7 @@ body {
 
 /* line 220, src/_main.scss */
 .ramm {
-  color: #91180e;
+  color: #8b0304;
   font-weight: bold;
 }
 
@@ -9214,7 +9214,7 @@ ul.toc ul {
 /* line 252, src/_main.scss */
 ul.toc > li {
   font-size: 110%;
-  color: #91180e;
+  color: #8b0304;
   padding-top: 0.5em;
   font-weight: bold;
 }
@@ -9247,7 +9247,7 @@ h1.title {
 .subtitle {
   text-align: center;
   font-size: 2em;
-  color: #91180e;
+  color: #8b0304;
   font-family: windlass;
 }
 
@@ -9343,7 +9343,7 @@ li.title.back.js-generated h5 a:before {
 
 /* line 345, src/_main.scss */
 a:hover {
-  color: #91180e;
+  color: #8b0304;
 }
 
 /* line 349, src/_main.scss */
