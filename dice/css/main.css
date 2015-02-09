@@ -11,7 +11,7 @@
 .hidden {display: none;}
 .wfailed {
    color: #f00;
-   background-color: #91180e;
+   background-color: #8b0304;
 }
 #legenday, #mythic, #titanic, #wound {
    text-align: center;
@@ -22,7 +22,7 @@
 }
 html, body {
    height: 100%;
-   background-color: #91180e;
+   background-color: #8b0304;
 }
 #accordion {
    height: 100%;
