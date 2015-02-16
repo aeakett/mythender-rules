@@ -21,27 +21,42 @@
       <div>Storm: <input id="storm" name="storm" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
       <div id="woundTrack">Wounds: <input id="woundNo" name="woundNo" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
       <div>Wound cost:<input id="woundCost" name="woundCost" type="number" min="0" inputmode="numeric" pattern="[0-9]*"></div>
-      <div id="wpns">
-         Weapons
-         <div id="wpn1">
-            <input id="wpn1name" name="wpn1name">
-            [<input id="wpn1chg1" name="wpn1chg1" type="checkbox"><input id="wpn1drn1" name="wpn1drn1" type="checkbox">]
-            [<input id="wpn1chg2" name="wpn1chg2" type="checkbox"><input id="wpn1drn2" name="wpn1drn2" type="checkbox">]
-            [<input id="wpn1chg3" name="wpn1chg3" type="checkbox"><input id="wpn1drn3" name="wpn1drn3" type="checkbox">]
-         </div>
-         <div id="wpn2">
-            <input id="wpn2name" name="wpn2name">
-            [<input id="wpn2chg1" name="wpn2chg1" type="checkbox"><input id="wpn2drn1" name="wpn2drn1" type="checkbox">]
-            [<input id="wpn2chg2" name="wpn2chg2" type="checkbox"><input id="wpn2drn2" name="wpn2drn2" type="checkbox">]
-            [<input id="wpn2chg3" name="wpn2chg3" type="checkbox"><input id="wpn2drn3" name="wpn2drn3" type="checkbox">]
-         </div>
-         <div id="wpn3">
-            <input id="wpn3name" name="wpn3name">
-            [<input id="wpn3chg1" name="wpn3chg1" type="checkbox"><input id="wpn3drn1" name="wpn3drn1" type="checkbox">]
-            [<input id="wpn3chg2" name="wpn3chg2" type="checkbox"><input id="wpn3drn2" name="wpn3drn2" type="checkbox">]
-            [<input id="wpn3chg3" name="wpn3chg3" type="checkbox"><input id="wpn3drn3" name="wpn3drn3" type="checkbox">]
-         </div>
-      </div>
+      <table id="wpns">
+         <tr><th colspan="3">Weapons</th><th id="wpdDrnBns1">+3 dice</th><th id="wpdDrnBns2">+2 dice</th><th id="wpdDrnBns3">+2 might</th></tr>
+         <tr id="wpn1">
+            <td id="wpn1name" colspan="3"><input><span class="isMyWeapon">&hellip;is my weapon</span></td>
+            <td rowspan="2"><div id="wpn1cd1"></div></td>
+            <td rowspan="2"><div id="wpn1cd2"></div></td>
+            <td rowspan="2"><div id="wpn1cd3"></div></td>
+         </tr>
+         <tr id="wpn1type">
+            <td><span id="wpn1int"> intrinsic</span></td>
+            <td><span id="wpn1rel"> relic</span></td>
+            <td><span id="wpn1cmp"> companion</span></td>
+         </tr>
+         <tr id="wpn2">
+            <td id="wpn2name" colspan="3"><input><span class="isMyWeapon">&hellip;is my weapon</span></td>
+            <td rowspan="2"><div id="wpn2cd1"></div></td>
+            <td rowspan="2"><div id="wpn2cd2"></div></td>
+            <td rowspan="2"><div id="wpn2cd3"></div></td>
+         </tr>
+         <tr id="wpn2type">
+            <td><span id="wpn2int"> intrinsic</span></td>
+            <td><span id="wpn2rel"> relic</span></td>
+            <td><span id="wpn2cmp"> companion</span></td>
+         </tr>
+         <tr id="wpn3">
+            <td id="wpn3name" colspan="3"><input><span class="isMyWeapon">&hellip;is my weapon</span></td>
+            <td rowspan="2"><div id="wpn3cd1"></div></td>
+            <td rowspan="2"><div id="wpn3cd2"></div></td>
+            <td rowspan="2"><div id="wpn3cd3"></div></td>
+         </tr>
+         <tr id="wpn3type">
+            <td><span id="wpn3int"> intrinsic</span></td>
+            <td><span id="wpn3rel"> relic</span></td>
+            <td><span id="wpn3cmp"> companion</span></td>
+         </tr>
+      </table>
       <div>
          Gifts: <span id="giftList"></span>
          <button id="addGiftButton">+</button>
@@ -166,6 +181,7 @@
 <script src="js/simpleStorage.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/gifts.js"></script>
+<script src="js/weapons.js"></script>
 <script src="js/legendary.js"></script>
 <script src="js/mythic.js"></script>
 <script src="js/titanic.js"></script>
@@ -366,13 +382,6 @@
       $('#woundCost').val(num);
    }
 
-
-
-   function saveWeapons() {
-      simpleStorage.set('globalWeapons', weapons);
-      renderWeapons();
-   }
-
    function loadThunder() {
       var thunder=simpleStorage.get('globalThunder');
       if (thunder) {
@@ -414,13 +423,6 @@
 
 
 
-   function loadWeapons() {
-      var thisWeapons=simpleStorage.get('globalWeapons');
-      if (!thisWeapons) { thisWeapons= [blankWeapon, blankWeapon, blankWeapon]; }
-      weapons=thisWeapons;
-      renderWeapons();
-   }
-
    function getMight() {
       return $('#might').val();
    }
@@ -438,78 +440,6 @@
    }
 
 
-
-   function chargeCompanions() {
-      var flag=false;
-      if (weapons[0].type.companion) {chargeWeapon(0); flag=true;}
-      if (weapons[1].type.companion) {chargeWeapon(1); flag=true;}
-      if (weapons[2].type.companion) {chargeWeapon(2); flag=true;}
-      if (flag) {
-         var n = noty({
-            text        : '<span class="gainLosePay">Companions Charged</span><img height="300" src="img/compCharge.svg">',
-            type        : 'alert',
-            maxVisible  : 1,
-            dismissQueue: true,
-            modal       : true,
-            layout      : 'center',
-            theme       : 'mythdice_theme',
-            animation: {
-               open: 'animated bounceInDown',
-               close: 'animated bounceOutDown'
-            }
-         });
-      }
-   }
-
-   function chargeWeapon(weaponNo) {
-      if (!weapons[weaponNo].charge[0]) {weapons[weaponNo].charge[0]=true; return;}
-      if (!weapons[weaponNo].charge[1]) {weapons[weaponNo].charge[1]=true; return;}
-      if (!weapons[weaponNo].charge[2]) {weapons[weaponNo].charge[2]=true; return;}
-      saveWeapons();
-   }
-
-   function drainWeapon(weaponNo) {
-      if (weapons[weaponNo].charge[0] && !weapons[weaponNo].drain[0]) {weapons[weaponNo].drain[0]=true;}
-      if (weapons[weaponNo].charge[1] && !weapons[weaponNo].drain[1]) {weapons[weaponNo].drain[1]=true;}
-      if (weapons[weaponNo].charge[2] && !weapons[weaponNo].drain[2]) {weapons[weaponNo].drain[2]=true;}
-      saveWeapons();
-   }
-
-
-
-   function renderWeapons() {
-      $('#wpn1name').val(weapons[0].name).removeClass('intrinsic relic companion');
-      if (weapons[0].charge[0])      {$('#wpn1chg1').attr('checked');}
-      if (weapons[0].charge[1])      {$('#wpn1chg2').attr('checked');}
-      if (weapons[0].charge[2])      {$('#wpn1chg3').attr('checked');}
-      if (weapons[0].drain[0])       {$('#wpn1drn1').attr('checked');}
-      if (weapons[0].drain[1])       {$('#wpn1drn2').attr('checked');}
-      if (weapons[0].drain[2])       {$('#wpn1drn3').attr('checked');}
-      if (weapons[0].type.intrinsic) {$('#wpn1').addClass('intrinsic');}
-      if (weapons[0].type.relic)     {$('#wpn1').addClass('relic');}
-      if (weapons[0].type.intrinsic) {$('#wpn1').addClass('companion');}
-      $('#wpn2name').val(weapons[1].name).removeClass('intrinsic relic companion');
-      if (weapons[1].charge[0])      {$('#wpn2chg1').attr('checked');}
-      if (weapons[1].charge[1])      {$('#wpn2chg2').attr('checked');}
-      if (weapons[1].charge[2])      {$('#wpn2chg3').attr('checked');}
-      if (weapons[1].drain[0])       {$('#wpn2drn1').attr('checked');}
-      if (weapons[1].drain[1])       {$('#wpn2drn2').attr('checked');}
-      if (weapons[1].drain[2])       {$('#wpn2drn3').attr('checked');}
-      if (weapons[1].type.intrinsic) {$('#wpn2').addClass('intrinsic');}
-      if (weapons[1].type.relic)     {$('#wpn2').addClass('relic');}
-      if (weapons[1].type.intrinsic) {$('#wpn2').addClass('companion');}
-      $('#wpn3name').val(weapons[2].name).removeClass('intrinsic relic companion');
-      if (weapons[2].charge[0])      {$('#wpn3chg1').attr('checked');}
-      if (weapons[2].charge[1])      {$('#wpn3chg2').attr('checked');}
-      if (weapons[2].charge[2])      {$('#wpn3chg3').attr('checked');}
-      if (weapons[2].drain[0])       {$('#wpn3drn1').attr('checked');}
-      if (weapons[2].drain[1])       {$('#wpn3drn2').attr('checked');}
-      if (weapons[2].drain[2])       {$('#wpn3drn3').attr('checked');}
-      if (weapons[2].type.intrinsic) {$('#wpn3').addClass('intrinsic');}
-      if (weapons[2].type.relic)     {$('#wpn3').addClass('relic');}
-      if (weapons[2].type.intrinsic) {$('#wpn3').addClass('companion');}
-
-   }
 
    function hideWRelentlessnessU() {$('#wuserelentlessnessu, #wrelentlessnessuwut, #wrelentlessnessuwut + br').hide();}
    function hideWBloodlust() {$('#wusebloodlust, #wbloodlustwut, #wbloodlustwut + br').hide();}
@@ -532,6 +462,7 @@
       loadGifts();
       window.weapons='';
       loadWeapons();
+      renderWeapons();
    }
 
    $( document ).ready(function() {
@@ -762,16 +693,7 @@
       
    });
 
-   var blankWeapon = {
-      'name': '',
-      'type': {
-         'intrinsic': false,
-         'relic': false,
-         'companion': false
-      },
-      'charge': [false, false, false],
-      'drain': [false, false, false]
-   }
+
 </script>
 </body>
 </html>

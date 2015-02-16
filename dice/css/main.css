@@ -49,3 +49,42 @@ a.accordianExplanation {float: right;}
    font-variant: small-caps;
    font-weight: bold;
 }
+
+.wpnType {
+   background: url(../img/weapon_type.svg) no-repeat top left;
+   background-size: 1em 1em;
+   padding-left: 1.1em;
+}
+
+.wpnTypeChecked {
+   background: url(../img/weapon_type-checked.svg) no-repeat top left;
+   background-size: 1em 1em;
+   padding-left: 1.1em;
+}
+
+.cdDrained {
+   display: inline-block;
+   vertical-align: top;
+   background: url(../img/charge-drain-both.svg) no-repeat top left;
+   background-size: 50px 50px;
+   width: 50px;
+   height: 50px;
+}
+
+.cdCharged {
+   display: inline-block;
+   vertical-align: top;
+   background: url(../img/charge-drain-charged.svg) no-repeat top left;
+   background-size: 50px 50px;
+   width: 50px;
+   height: 50px;
+}
+
+.cdReady {
+   display: inline-block;
+   vertical-align: top;
+   background: url(../img/charge-drain-empty.svg) no-repeat top left;
+   background-size: 50px 50px;
+   width: 50px;
+   height: 50px;
+}
