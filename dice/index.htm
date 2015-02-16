@@ -44,6 +44,7 @@
       </div>
       <div>Gifts: <span id="giftList"></span></div>
    </div>
+
    <h3>Legendary Action<a title="This is a regular... awesome action" class="accordianExplanation">?</a></h3>
    <div id="legendary">
       <label for="lStorm">Storm</label><br>
@@ -58,9 +59,8 @@
       <div id="lStormResult"></div>
       <div id="lThunderResult"></div>
       <button id="lRollResultsReset" class="hidden">OK</button>
-
-
    </div>
+
    <h3>Mythic Action<a title="A super-human, awesome action" class="accordianExplanation">?</a></h3>
    <div id="mythic">
       <label for="mStorm">Storm</label><br>
@@ -72,17 +72,27 @@
       <label for="mBThunder">bonus Thunder</label><br>
       <input id="mBThunder" name="mBThunder" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
       <button id="mRoll">Roll</button>
+      <div id="mStormResult"></div>
+      <div id="mThunderResult"></div>
+      <div id="mMythicResult"></div>
+      <button id="mRollResultsReset" class="hidden">OK</button>
    </div>
+
    <h3>Titanic Action<a title="Wait... you're doing <em>what</em>?" class="accordianExplanation">?</a></h3>
    <div id="titanic">
       <label for="tStorm">Storm</label><br>
       <input id="tStorm" name="tStorm" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
       <label for="tThunder">Thunder</label><br>
       <input id="tThunder" name="tThunder" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
-      <label for="tBStorm">bonus Storm</label><br>
-      <input id="tBStorm" name="tBStorm" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
+      <label for="tBThunder">bonus Thunder</label><br>
+      <input id="tBThunder" name="tBThunder" type="number" min="0" inputmode="numeric" pattern="[0-9]*" /><br>
       <button id="tRoll">Roll</button>
+      <div id="tStormResult"></div>
+      <div id="tThunderResult"></div>
+      <div id="tMythicResult"></div>
+      <button id="tRollResultsReset" class="hidden">OK</button>
    </div>
+
    <h3>Wounding<a title="Uh-oh!" class="accordianExplanation">?</a></h3>
    <div id="wound">
       <label for="wno">Wound number</label><br>
@@ -116,6 +126,9 @@
 <script src="js/mythdice_theme.js"></script>
 <script src="js/simpleStorage.js"></script>
 <script src="js/jquery-ui.min.js"></script>
+<script src="js/legendary.js"></script>
+<script src="js/mythic.js"></script>
+<script src="js/titanic.js"></script>
 
 <script>
    $(function() {
@@ -522,63 +535,6 @@
       });
       $('#woundCost').change(function(){
          saveWoundCost($(this).val());
-      });
-
-      $('#lRoll').click(function(){
-         for (var i=0; i < $('#lStorm').val(); i++) {
-            var result=roll();
-            if (result > 3) {
-               $('#lStormResult').append('<span>'+drawStormDie(result)+'</span>');
-            } else {
-               $('#lStormResult').append('<span class="lFailedStorm">'+drawStormDie(result)+'</span>');
-            }
-         }
-         for (var i=0; i < $('#lBStorm').val(); i++) {
-            var result=roll();
-            if (result > 3) {
-               $('#lStormResult').append('<span>'+drawBonusStormDie(result)+'</span>');
-            } else {
-               $('#lStormResult').append('<span class="lFailedStorm">'+drawBonusStormDie(result)+'</span>');
-            }
-         }
-         for (var i=0; i < $('#lThunder').val(); i++) {
-            var result=roll();
-            if (result > 3) {
-               $('#lThunderResult').append('<span>'+drawThunderDie(result)+'</span>');
-            } else {
-               $('#lThunderResult').append('<span class="lFailedThunder">'+drawThunderDie(result)+'</span>');
-            }
-         }
-         for (var i=0; i < $('#lBThunder').val(); i++) {
-            var result=roll();
-            if (result > 3) {
-               $('#lThunderResult').append('<span>'+drawBonusThunderDie(result)+'</span>');
-            } else {
-               $('#lThunderResult').append('<span class="lFailedThunder">'+drawBonusThunderDie(result)+'</span>');
-            }
-         }
-         $('#lRollResultsReset, #lRoll').toggle();
-      });
-
-      $('#lRollResultsReset').click(function(){
-         var prevThunder = $('#lThunder').val();
-         var gainedThunder = 0;
-         $('#lStormResult > span:not(.lFailedStorm)').each(function(){gainedThunder++;});
-         var newThunder = parseInt(prevThunder) + parseInt(gainedThunder);
-         if (gainedThunder > 0) {gainThunder(gainedThunder);}
-         saveThunder(newThunder);
-         
-         var prevLightning = getLightning();
-         var gainedLightning = 0;
-         $('#lThunderResult > span:not(.lFailedThunder)').each(function(){gainedLightning++;});
-         var newLightning = parseInt(prevLightning) + parseInt(gainedLightning);
-         if (gainedLightning > 0) {gainLightning(gainedLightning);}
-         saveLightning(newLightning);
-
-         $('#ui-id-1').click();
-         $('#lStormResult, #lThunderResult').empty();
-         $('#lRollResultsReset, #lRoll').toggle();
-         $('#lBThunder, #lBStorm').val('0');
       });
 
       $('#woundRoll').click(function(){

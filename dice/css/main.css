@@ -21,8 +21,9 @@
    padding: .1em;
 }
 
-.bonusStormDie, .bonusThunderDie {
-   color: #8b0304;
+.mythicDie {
+   width: 1.5em;
+   padding: .15em;
 }
 
 html, body {
