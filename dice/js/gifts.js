@@ -13,6 +13,56 @@ function loadGifts() {
 function addGift(giftID) {
    gifts[giftID]['has']=true;
    saveGifts();
+   switch (giftID) {
+      case 'channeledHatred':
+         // make sure to describe the awesome
+         var n = noty({
+            text        : 'Describe how you are ripping raw power from the Mythic World and pouring it into your Weapons and body.',
+            type        : 'information',
+            maxVisible  : 1,
+            dismissQueue: true,
+            layout      : 'center',
+            theme       : 'mythdice_theme',
+            animation: {
+               open: 'animated zoomIn',
+               close: 'animated zoomOut'
+            }
+         });
+         var numberOfGifts = 0;
+         for (var i in gifts) {
+            if (gifts.hasOwnProperty(i)) {
+               if (gifts[i]['has']) {
+                  numberOfGifts++;
+               }
+            }
+         }
+         gainLightning(numberOfGifts*2);
+         break;
+      case 'harbingerOfStorm':
+         gainStorm(2);
+         break;
+      case 'harbingerOfStorm-raging':
+         gainStorm(2);
+         break;
+      case 'surgeOfMight':
+         // make sure to describe the awesome
+         var n = noty({
+            text        : 'Describe how you acquire and drain this new wellspring of power.',
+            type        : 'information',
+            maxVisible  : 1,
+            dismissQueue: true,
+            layout      : 'center',
+            theme       : 'mythdice_theme',
+            animation: {
+               open: 'animated zoomIn',
+               close: 'animated zoomOut'
+            }
+         });
+         gainMight(5);
+         break;
+      default:
+         break;
+   }
 }
 
 function removeGift(giftID) {
