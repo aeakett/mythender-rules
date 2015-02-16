@@ -32,10 +32,39 @@ function renderGifts() {
 }
 
 $( document ).ready(function() {
+
    $('#addGiftButton').click(function(){
-      alert('I really should do something.');
+      $('#addGiftSelect, #addGiftAddButton').show();
+   });
+
+   $('#addGiftAddButton').click(function(){
+      addGift($('#addGiftSelect').val());
+      $('#addGiftSelect, #addGiftAddButton').hide();
+      renderGifts();
+   });
+
+   $('#delGiftButton').click(function(){
+      for (var i in gifts) {
+         if (gifts.hasOwnProperty(i)) {
+            if (gifts[i].has) {
+               $('#delGiftSelect').append($('<option>', {
+                  value: i,
+                  text: gifts[i].displayName
+               }));
+            }
+         }
+      }
+      $('#delGiftSelect, #delGiftRemoveButton').show();
+   });
+
+   $('#delGiftRemoveButton').click(function(){
+      removeGift($('#delGiftSelect').val());
+      $('#delGiftSelect, #delGiftRemoveButton').hide();
+      renderGifts();
+      $('#delGiftSelect').empty();
    });
 });
+
 
 
 
