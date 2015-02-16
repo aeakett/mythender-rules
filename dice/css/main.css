@@ -9,8 +9,7 @@
 }
 
 .hidden {display: none;}
-.wfailed {
-   color: #f00;
+.wfailed, .tFailedThunder {
    background-color: #8b0304;
 }
 #legenday, #mythic, #titanic, #wound {

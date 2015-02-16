@@ -32,9 +32,16 @@ $( document ).ready(function() {
    $('#tRollResultsReset').click(function(){
       var prevThunder = $('#tThunder').val();
       var gainedThunder = 0;
+      var lostThunder = 0;
       $('#tStormResult > span:not(.tFailedStorm)').each(function(){gainedThunder++;});
-      var newThunder = parseInt(prevThunder) + parseInt(gainedThunder);
-      gainThunder(parseInt(gainedThunder));
+      $('#tThunderResult > .tFailedThunder').each(function(){lostThunder++;});
+      var netThunderChange = gainedThunder - lostThunder;
+      var newThunder = parseInt(prevThunder) + parseInt(netThunderChange);
+      if (netThunderChange > 0) {
+         gainThunder(parseInt(gainedThunder));
+      } else if (netThunderChange < 0) {
+         loseThunder(parseInt(netThunderChange));
+      }
       saveThunder(newThunder);
 
       var prevLightning = getLightning();
