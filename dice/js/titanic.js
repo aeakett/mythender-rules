@@ -46,7 +46,13 @@ $( document ).ready(function() {
 
       var prevLightning = getLightning();
       var gainedLightning = 0;
-      var titanicLightningMultiplier = 3;
+      var titanicLightningMultiplier = 0;
+      if (gifts['mightyPresence'].has) {
+         titanicLightningMultiplier = 4;
+      } else {
+         titanicLightningMultiplier = 3;
+      }
+      
       $('#tThunderResult > span:not(.tFailedThunder)').each(function(){gainedLightning++;});
       var newLightning = parseInt(prevLightning) + parseInt(gainedLightning)*titanicLightningMultiplier;
       if (gainedLightning > 0) {gainLightning(parseInt(gainedLightning)*titanicLightningMultiplier);}
