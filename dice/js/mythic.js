@@ -32,8 +32,15 @@ $( document ).ready(function() {
             $('#mThunderResult').append('<span class="mFailedThunder">'+drawBonusThunderDie(result)+'</span>');
          }
       }
-      var result=roll();
-      $('#mMythicResult').append('<span data-mythicresult="'+result+'">'+drawMythicDie(result)+'</span>');
+      if (gifts['blazeOfGlory'].has) {
+         var result1=roll();
+         var result2=roll();
+         var resultTotal=result1+result2;
+         $('#mMythicResult').append('<span data-mythicresult="'+resultTotal+'">'+drawMythicDie(result1)+drawMythicDie(result2)+'</span>');
+      } else {
+         var result=roll();
+         $('#mMythicResult').append('<span data-mythicresult="'+result+'">'+drawMythicDie(result)+'</span>');
+      }
       $('#mRollResultsReset, #mRoll').toggle();
    });
 
