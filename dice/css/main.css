@@ -16,10 +16,15 @@
 #legenday, #mythic, #titanic, #wound {
    text-align: center;
 }
-.thunderDie {
+.thunderDie, .stormDie, .bonusThunderDie, .bonusStormDie {
    width: 1em;
    padding: .1em;
 }
+
+.bonusStormDie, .bonusThunderDie {
+   color: #8b0304;
+}
+
 html, body {
    height: 100%;
    background-color: #8b0304;
