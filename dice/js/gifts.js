@@ -11,7 +11,7 @@ function loadGifts() {
 }
 
 function addGift(giftID) {
-   gifts[giftID]['has']=true;
+   gifts[giftID].has=true;
    saveGifts();
    switch (giftID) {
       case 'channeledHatred':
@@ -31,7 +31,7 @@ function addGift(giftID) {
          var numberOfGifts = 0;
          for (var i in gifts) {
             if (gifts.hasOwnProperty(i)) {
-               if (gifts[i]['has']) {
+               if (gifts[i].has) {
                   numberOfGifts++;
                }
             }
@@ -66,7 +66,7 @@ function addGift(giftID) {
 }
 
 function removeGift(giftID) {
-   gifts[giftID]['has']=false;
+   gifts[giftID].has=false;
    saveGifts();
 }
 
@@ -74,8 +74,8 @@ function renderGifts() {
    $('#giftList').html('')
    for (var i in gifts) {
       if (gifts.hasOwnProperty(i)) {
-         if (gifts[i]['has']) {
-            $('#giftList').append(gifts[i]['displayName']);
+         if (gifts[i].has) {
+            $('#giftList').append(gifts[i].displayName);
          }
       }
    }
