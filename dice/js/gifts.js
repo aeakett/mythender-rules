@@ -71,7 +71,7 @@ function removeGift(giftID) {
 }
 
 function renderGifts() {
-   $('#giftList').html('')
+   $('#giftList').html('');
    for (var i in gifts) {
       if (gifts.hasOwnProperty(i)) {
          if (gifts[i].has) {
