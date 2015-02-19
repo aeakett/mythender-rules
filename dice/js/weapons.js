@@ -11,70 +11,70 @@ function saveWeapons() {
 }
 
 $( document ).ready(function() {
-   $('#wpn1name > input').change(function(){weapons[0]['name'] = $(this).val(); saveWeapons();});
-   $('#wpn2name > input').change(function(){weapons[1]['name'] = $(this).val(); saveWeapons();});
-   $('#wpn3name > input').change(function(){weapons[2]['name'] = $(this).val(); saveWeapons();});
-   $('#wpn1int').click(function(){weapons[0]['type']['intrinsic'] = !weapons[0]['type']['intrinsic']; saveWeapons();});
-   $('#wpn1rel').click(function(){weapons[0]['type']['relic']     = !weapons[0]['type']['relic']; saveWeapons();});
-   $('#wpn1cmp').click(function(){weapons[0]['type']['companion'] = !weapons[0]['type']['companion']; saveWeapons();});
-   $('#wpn2int').click(function(){weapons[1]['type']['intrinsic'] = !weapons[0]['type']['intrinsic']; saveWeapons();});
-   $('#wpn2rel').click(function(){weapons[1]['type']['relic']     = !weapons[0]['type']['relic']; saveWeapons();});
-   $('#wpn2cmp').click(function(){weapons[1]['type']['companion'] = !weapons[0]['type']['companion']; saveWeapons();});
-   $('#wpn3int').click(function(){weapons[2]['type']['intrinsic'] = !weapons[0]['type']['intrinsic']; saveWeapons();});
-   $('#wpn3rel').click(function(){weapons[2]['type']['relic']     = !weapons[0]['type']['relic']; saveWeapons();});
-   $('#wpn3cmp').click(function(){weapons[2]['type']['companion'] = !weapons[0]['type']['companion']; saveWeapons();});
+   $('#wpn1name > input').change(function(){weapons[0].name = $(this).val(); saveWeapons();});
+   $('#wpn2name > input').change(function(){weapons[1].name = $(this).val(); saveWeapons();});
+   $('#wpn3name > input').change(function(){weapons[2].name = $(this).val(); saveWeapons();});
+   $('#wpn1int').click(function(){weapons[0].type.intrinsic = !weapons[0].type.intrinsic; saveWeapons();});
+   $('#wpn1rel').click(function(){weapons[0].type.relic     = !weapons[0].type.relic; saveWeapons();});
+   $('#wpn1cmp').click(function(){weapons[0].type.companion = !weapons[0].type.companion; saveWeapons();});
+   $('#wpn2int').click(function(){weapons[1].type.intrinsic = !weapons[0].type.intrinsic; saveWeapons();});
+   $('#wpn2rel').click(function(){weapons[1].type.relic     = !weapons[0].type.relic; saveWeapons();});
+   $('#wpn2cmp').click(function(){weapons[1].type.companion = !weapons[0].type.companion; saveWeapons();});
+   $('#wpn3int').click(function(){weapons[2].type.intrinsic = !weapons[0].type.intrinsic; saveWeapons();});
+   $('#wpn3rel').click(function(){weapons[2].type.relic     = !weapons[0].type.relic; saveWeapons();});
+   $('#wpn3cmp').click(function(){weapons[2].type.companion = !weapons[0].type.companion; saveWeapons();});
    $('#wpn1cd1').click(function(){
-      if      (!weapons[0]['charge'][0]){weapons[0]['charge'][0]=true;}
-      else if (!weapons[0]['drain' ][0]){weapons[0]['drain' ][0]=true;}
-      else                              {weapons[0]['charge'][0]=false;weapons[0]['drain'][0]=false;}
+      if      (!weapons[0].charge[0]){weapons[0].charge[0]=true;}
+      else if (!weapons[0].drain[0]) {weapons[0].drain[0]=true;}
+      else                           {weapons[0].charge[0]=false;weapons[0].drain[0]=false;}
       saveWeapons();
    });
    $('#wpn1cd2').click(function(){
-      if      (!weapons[0]['charge'][1]){weapons[0]['charge'][1]=true;}
-      else if (!weapons[0]['drain' ][1]){weapons[0]['drain' ][1]=true;}
-      else                              {weapons[0]['charge'][1]=false;weapons[0]['drain'][1]=false;}
+      if      (!weapons[0].charge[1]){weapons[0].charge[1]=true;}
+      else if (!weapons[0].drain[1]) {weapons[0].drain[1]=true;}
+      else                           {weapons[0].charge[1]=false;weapons[0].drain[1]=false;}
       saveWeapons();
    });
    $('#wpn1cd3').click(function(){
-      if      (!weapons[0]['charge'][2]){weapons[0]['charge'][2]=true;}
-      else if (!weapons[0]['drain' ][2]){weapons[0]['drain' ][2]=true;}
-      else                              {weapons[0]['charge'][2]=false;weapons[0]['drain'][2]=false;}
+      if      (!weapons[0].charge[2]){weapons[0].charge[2]=true;}
+      else if (!weapons[0].drain[2]) {weapons[0].drain[2]=true;}
+      else                           {weapons[0].charge[2]=false;weapons[0].drain[2]=false;}
       saveWeapons();
    });
    $('#wpn2cd1').click(function(){
-      if      (!weapons[1]['charge'][0]){weapons[1]['charge'][0]=true;}
-      else if (!weapons[1]['drain' ][0]){weapons[1]['drain' ][0]=true;}
-      else                              {weapons[1]['charge'][0]=false;weapons[1]['drain'][0]=false;}
+      if      (!weapons[1].charge[0]){weapons[1].charge[0]=true;}
+      else if (!weapons[1].drain[0]) {weapons[1].drain[0]=true;}
+      else                           {weapons[1].charge[0]=false;weapons[1].drain[0]=false;}
       saveWeapons();
    });
    $('#wpn2cd2').click(function(){
-      if      (!weapons[1]['charge'][1]){weapons[1]['charge'][1]=true;}
-      else if (!weapons[1]['drain' ][1]){weapons[1]['drain' ][1]=true;}
-      else                              {weapons[1]['charge'][1]=false;weapons[1]['drain'][1]=false;}
+      if      (!weapons[1].charge[1]){weapons[1].charge[1]=true;}
+      else if (!weapons[1].drain[1]) {weapons[1].drain[1]=true;}
+      else                           {weapons[1].charge[1]=false;weapons[1].drain[1]=false;}
       saveWeapons();
    });
    $('#wpn2cd3').click(function(){
-      if      (!weapons[1]['charge'][2]){weapons[1]['charge'][2]=true;}
-      else if (!weapons[1]['drain' ][2]){weapons[1]['drain' ][2]=true;}
-      else                              {weapons[1]['charge'][2]=false;weapons[1]['drain'][2]=false;}
+      if      (!weapons[1].charge[2]){weapons[1].charge[2]=true;}
+      else if (!weapons[1].drain[2]) {weapons[1].drain[2]=true;}
+      else                           {weapons[1].charge[2]=false;weapons[1].drain[2]=false;}
       saveWeapons();
    });
    $('#wpn3cd1').click(function(){
-      if      (!weapons[2]['charge'][0]){weapons[2]['charge'][0]=true;}
-      else if (!weapons[2]['drain' ][0]){weapons[2]['drain' ][0]=true;}
-      else                              {weapons[2]['charge'][0]=false;weapons[2]['drain'][0]=false;}
+      if      (!weapons[2].charge[0]){weapons[2].charge[0]=true;}
+      else if (!weapons[2].drain[0]) {weapons[2].drain[0]=true;}
+      else                           {weapons[2].charge[0]=false;weapons[2].drain[0]=false;}
       saveWeapons();
    });
    $('#wpn3cd2').click(function(){
-      if      (!weapons[2]['charge'][1]){weapons[2]['charge'][1]=true;}
-      else if (!weapons[2]['drain' ][1]){weapons[2]['drain' ][1]=true;}
-      else                              {weapons[2]['charge'][1]=false;weapons[2]['drain'][1]=false;}
+      if      (!weapons[2].charge[1]){weapons[2].charge[1]=true;}
+      else if (!weapons[2].drain[1]) {weapons[2].drain[1]=true;}
+      else                           {weapons[2].charge[1]=false;weapons[2].drain[1]=false;}
       saveWeapons();
    });
    $('#wpn3cd3').click(function(){
-      if      (!weapons[2]['charge'][2]){weapons[2]['charge'][2]=true;}
-      else if (!weapons[2]['drain' ][2]){weapons[2]['drain' ][2]=true;}
-      else                              {weapons[2]['charge'][2]=false;weapons[2]['drain'][2]=false;}
+      if      (!weapons[2].charge[2]){weapons[2].charge[2]=true;}
+      else if (!weapons[2].drain[2]) {weapons[2].drain[2]=true;}
+      else                           {weapons[2].charge[2]=false;weapons[2].drain[2]=false;}
       saveWeapons();
    });
 });
@@ -163,4 +163,4 @@ var blankWeapon = {
    },
    'charge': [false, false, false],
    'drain': [false, false, false]
-}
+};
