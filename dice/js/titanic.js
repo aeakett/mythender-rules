@@ -24,7 +24,7 @@ $( document ).ready(function() {
             $('#tThunderResult').append('<span class="tFailedThunder">'+drawBonusThunderDie(result)+'</span>');
          }
       }
-      if (gifts['blazeOfGlory'].has) {
+      if (gifts.blazeOfGlory.has) {
          var result1=roll();
          var result2=roll();
          var resultTotal=result1+result2;
