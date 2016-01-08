@@ -1,0 +1,10 @@
+{
+  "name": "mythendersrd",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-uncss": "~0.4.4",
+    "grunt-contrib-cssmin": "~0.14.0",
+    "grunt-contrib-clean": "~0.7.0"
+  }
+}
