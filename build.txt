@@ -1,0 +1,5 @@
+Super-quick notes on how to build this...
+
+1. Run 'bundle exec compass watch' in a terminal to automaticall rebuild css/app.css when you make changes to the SASS files
+2. Run 'make' to apply the template to the bare .htm files and copy everything (images, css, js, html, other) into place
+3. Run 'grunt' to minify the css, and run 'make' again to copy it into place.
