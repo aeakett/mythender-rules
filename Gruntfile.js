@@ -34,7 +34,7 @@ module.exports = function(grunt) {
       },
       cssmin: {
          minify: {
-            src: 'css/pruned.css',
+            src: 'css/app.css',
             dest: 'dist/css/app.css'
          }
       },
@@ -43,8 +43,9 @@ module.exports = function(grunt) {
 
    grunt.loadNpmTasks('grunt-uncss');
    grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-clean');
+   grunt.loadNpmTasks('grunt-contrib-clean');
 
    // Default task(s).
-   grunt.registerTask('default', ['uncss', 'cssmin', 'clean']);
+   //grunt.registerTask('default', ['uncss', 'cssmin', 'clean']);
+	grunt.registerTask('default', ['cssmin']);
 };
