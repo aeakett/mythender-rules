@@ -6,50 +6,35 @@ $body-font: Georgia, serif;
 
 @font-face {
    font-family: 'whitedice';
-   src: url('whitedice.eot');
-   src: url('whitedice.eot?#iefix') format('embedded-opentype'),
-        url('whitedice.woff') format('woff'),
-        url('whitedice.ttf') format('truetype');
+   src: url('whitedice.woff') format('woff');
    font-weight: normal;
    font-style: normal;
 }
 
 @font-face {
    font-family: 'blackdice';
-   src: url('blackdice.eot');
-   src: url('blackdice.eot?#iefix') format('embedded-opentype'),
-        url('blackdice.woff') format('woff'),
-        url('blackdice.ttf') format('truetype');
+   src: url('blackdice.woff') format('woff');
    font-weight: normal;
    font-style: normal;
 }
 
 @font-face {
    font-family: 'mythicdice';
-   src: url('mythicdice.eot');
-   src: url('mythicdice.eot?#iefix') format('embedded-opentype'),
-        url('mythicdice.woff') format('woff'),
-        url('mythicdice.ttf') format('truetype');
+   src: url('mythicdice.woff') format('woff');
    font-weight: normal;
    font-style: normal;
 }
 
 @font-face {
    font-family: 'windlass';
-   src: url('windlass.eot');
-   src: url('windlass.eot?#iefix') format('embedded-opentype'),
-        url('windlass.woff') format('woff'),
-        url('windlass.ttf') format('truetype');
+   src: url('windlass.woff') format('woff');
    font-weight: normal;
    font-style: normal;
 }
 
 @font-face {
    font-family: 'Ouml-windlass';
-   src: url('Ouml-windlass.eot');
-   src: url('Ouml-windlass.eot?#iefix') format('embedded-opentype'),
-        url('Ouml-windlass.woff') format('woff'),
-        url('Ouml-windlass.ttf') format('truetype');
+   src: url('Ouml-windlass.woff') format('woff');
    font-weight: normal;
    font-style: normal;
 }
