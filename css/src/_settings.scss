@@ -3,3 +3,7 @@
 @import "foundation/components/global";
 $topbar-breakpoint: (9999px) !default; // Change to 9999px for always mobile layout
 $topbar-media-query: "only screen and (min-width: #{$topbar-breakpoint})";
+
+$topbar-dropdown-toggle-size: 5px;
+$topbar-dropdown-toggle-color: $white; 
+$topbar-dropdown-toggle-alpha: 0.4;
