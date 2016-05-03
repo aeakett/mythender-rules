@@ -1,0 +1,8 @@
+# Site settings
+title: Unofficial Mythender SRD
+description: Home of the Unofficial Mythender SRD
+baseurl: "/mythender-rules-jekyll_conversion/dist" # the subpath of your site, e.g. /blog/
+url: "http://mythendersrd.com" # the base hostname & protocol for your site
+destination: dist
+sass:
+  style: compressed

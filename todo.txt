@@ -1,8 +1,0 @@
-
--investigate fonts
-   -screen optimized serif?
-   -go sans serif instead?
-   -whatever it is, make sure that all of the fancy characters show
--should all fancy characters be replaced with html entities?
--go through css and make sure that everything is styled properly
--holy crap... this looks horrible in IE (8 alt least)

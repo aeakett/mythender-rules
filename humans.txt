@@ -1,11 +1,12 @@
-/* Humans who did this */
-Andrew Eakett (who did the initial heavy lifting)
-Alan De Smet (who came in and did some MAJOR clean-up)
-
-/* Awesome Human Beings */
-Ryan Macklin (http://ryanmacklin.com/ & http://mythenderrpg.com/)
-Bully Pulpit Games (http://www.bullypulpitgames.com/)
-
-/* Technical Stuff */
-Foundation (http://foundation.zurb.com/)
-Code (https://github.com/aeakett/mythender-rules)
+ who did this */
+ Andrew Eakett (who did the initial heavy lifting)
+ Alan De Smet (who came in and did some MAJOR clean-up)
+ 
+ /* Awesome Human Beings */
+ Ryan Macklin (http://ryanmacklin.com/ & http://mythenderrpg.com/)
+ Bully Pulpit Games (http://www.bullypulpitgames.com/)
+ 
+ /* Technical Stuff */
+ Foundation (http://foundation.zurb.com/)
+ Jekyll (https://jekyllrb.com/)
+ Code (https://github.com/aeakett/mythender-rules)oundation 5

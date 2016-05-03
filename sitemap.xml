@@ -1,87 +1,56 @@
+---
+layout: null
+sitemap:
+  exclude: 'yes'
+---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url>
-  <loc>http://mythendersrd.com/</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/index.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/what_is_mythender.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/what_you_need_to_play.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/creating_your_mythender.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/mythender_hearts.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/mythender_pasts.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/mythender_fates.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/playing_adventures.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/tutorial_battle.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/battling_myths_and_gods.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/your_hearts_gifts.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/mythender_moments.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/murdering_one_another.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/corruption_and_fate.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/mythic_norden.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/being_a_mythmaster.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/extended_rules.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/thanks_and_acknowledgements.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
-<url>
-  <loc>http://mythendersrd.com/extras.htm</loc>
-  <lastmod>2015-02-07T13:46:32+00:00</lastmod>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for post in site.posts %}
+    {% unless post.published == false %}
+    <url>
+      <loc>{{ site.url }}{{ site.baseurl }}{{ post.url }}</loc>
+      {% if post.sitemap.lastmod %}
+        <lastmod>{{ post.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+      {% elsif post.date %}
+        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      {% else %}
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      {% if post.sitemap.changefreq %}
+        <changefreq>{{ post.sitemap.changefreq }}</changefreq>
+      {% else %}
+        <changefreq>monthly</changefreq>
+      {% endif %}
+      {% if post.sitemap.priority %}
+        <priority>{{ post.sitemap.priority }}</priority>
+      {% else %}
+        <priority>0.5</priority>
+      {% endif %}
+    </url>
+    {% endunless %}
+  {% endfor %}
+  {% for page in site.pages %}
+    {% unless page.sitemap.exclude == "yes" %}
+    <url>
+      <loc>{{ site.url }}{{ site.baseurl }}{{ page.url | remove: "index.html" }}</loc>
+      {% if page.sitemap.lastmod %}
+        <lastmod>{{ page.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+      {% elsif page.date %}
+        <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+      {% else %}
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      {% if page.sitemap.changefreq %}
+        <changefreq>{{ page.sitemap.changefreq }}</changefreq>
+      {% else %}
+        <changefreq>monthly</changefreq>
+      {% endif %}
+      {% if page.sitemap.priority %}
+        <priority>{{ page.sitemap.priority }}</priority>
+      {% else %}
+        <priority>0.3</priority>
+      {% endif %}
+    </url>
+    {% endunless %}
+  {% endfor %}
 </urlset>
