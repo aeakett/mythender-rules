@@ -3,3 +3,4 @@
 /stylesheets/*
 link_report.htm
 /dist
+/node_modules/
